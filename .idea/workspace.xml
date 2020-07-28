@@ -18,214 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ffcf1e-b9c7-473c-91cf-1661c73aea8f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/._google-services_.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/debug/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/release/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/res/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/res/drawable/ic_baseline_menu_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/res/menu/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/res/values-fr/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/res/values-id/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/res/values-in/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_sdk/._.DS_Store" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__br_com_mauker_materialsearchview_materialsearchview_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_percent_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_preference_v14_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_preference_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_mancj_MaterialSearchBar_0_7_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_renaudcerrato_FloatingSearchView_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrotherPrintLibrary/BrotherPrintLibrary.aar" beforeDir="false" afterPath="$PROJECT_DIR$/BrotherPrintLibrary/BrotherPrintLibrary.aar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FDP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FDP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/google-services/debug/values/values.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/gas_cylinder.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_add_location_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_history_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_keyboard_arrow_left_white_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_keyboard_arrow_left_white_36dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_keyboard_arrow_right_white_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_monetization_on_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_person_pin_grey_500_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_radio_button_checked_black_18dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_radio_button_unchecked_black_18dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_settings_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/gas_cylinder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_add_location_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_radio_button_checked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_radio_button_unchecked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_settings_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/gas_cylinder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_add_location_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_history_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_keyboard_arrow_left_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_keyboard_arrow_left_white_36dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_keyboard_arrow_right_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_monetization_on_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_person_pin_grey_500_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_radio_button_checked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_radio_button_unchecked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_settings_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/gas_cylinder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_add_location_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_radio_button_checked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_radio_button_unchecked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_settings_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/gas_cylinder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_add_location_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_radio_button_checked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_radio_button_unchecked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_settings_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/gas_cylinder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_add_location_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_radio_button_checked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_radio_button_unchecked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_settings_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/gas_cylinder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_add_location_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_radio_button_checked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_radio_button_unchecked_black_18dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_settings_black_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_more_vert.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_more_vert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_scuba_tank_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_scuba_tank_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_user_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_user_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_user_location_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_user_location_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_gas_cylinder_black_24dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_gas_cylinder_black_24dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_gas_cylinder_black_36dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_gas_cylinder_black_36dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_menu_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_more_vert.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_more_vert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_scuba_tank_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_scuba_tank_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_user_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_user_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_user_location_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_user_location_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_gas_cylinder_black_24dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_gas_cylinder_black_24dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_gas_cylinder_black_36dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_gas_cylinder_black_36dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_menu_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/airtel_mm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/blue_plane_icon_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/book_flight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/cash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/check_in.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/combo_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/courier_marker_greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/courier_marker_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/dashboard_upper_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/date_time_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/delivery_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/delivery_list.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/depot_96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/faq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/flight_schedule.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/flight_status.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/gas_burner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/gas_medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/get_started_background2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/get_started_background_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/grey_plane_inflight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/location.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/location_small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/manage_booking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/marker_mech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/no_delivery_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/no_gas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/nostarred.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/notifications.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/ord_pay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/package_solid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/pickup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/qr.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/slydepay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/stock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/time.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/truck.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/truck_solid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/untitled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/user_marker_greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/visa_card.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/visa_card_input.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/visa_card_input_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/visa_vector.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/visa_vector_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/visa_vector_dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/walkthrough_img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/walkthrough_img_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-nodpi/walkthrough_img_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_more_vert.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_more_vert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_scuba_tank_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_scuba_tank_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_user_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_user_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_user_location_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_user_location_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_gas_cylinder_black_24dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_gas_cylinder_black_24dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_gas_cylinder_black_36dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_gas_cylinder_black_36dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_menu_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_more_vert.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_more_vert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_scuba_tank_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_scuba_tank_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_user_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_user_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_gas_cylinder_black_24dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_gas_cylinder_black_24dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_gas_cylinder_black_36dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_gas_cylinder_black_36dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_menu_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_more_vert.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_more_vert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_scuba_tank_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_scuba_tank_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_user_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_user_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_gas_cylinder_black_24dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_gas_cylinder_black_24dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_gas_cylinder_black_36dp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_gas_cylinder_black_36dp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_menu_white_24dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/drawable/gas_cylinder.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/layout/custom_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/layout/custom_toolbar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/menu/main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/values-fr/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/values-id/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/values-id/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/res/values-in/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/values-in/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/AddNewPlotActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/AddNewPlotActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/DetailedYearMonthlyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/DetailedYearMonthlyActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PandLActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PandLActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PlotDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PlotDetailsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/fragment/DynamicFormFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/fragment/DynamicFormFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/fragment/MyFormFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/fragment/MyFormFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/object/RealPlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/object/RealPlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/EditTextController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/EditTextController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.js" beforeDir="false" afterPath="$PROJECT_DIR$/install.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MapActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/gradlew" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/hybrid/HybridSampleApps/AccountEditor/assets/www/AccountEditor.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/hybrid/HybridSampleApps/AccountEditor/assets/www/AccountEditor.html" afterDir="false" />
@@ -278,27 +72,6 @@
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/tools/build_windows_file_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/tools/build_windows_file_list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/tools/generate_doc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/tools/generate_doc.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/tools/sdk.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/tools/sdk.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/SimpleSearchDialogCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/SimpleSearchDialogCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/SimpleSearchFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/SimpleSearchFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/StringsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/StringsHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/adapters/SearchDialogAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/adapters/SearchDialogAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/BaseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/BaseFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/BaseSearchDialogCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/BaseSearchDialogCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/FilterResultListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/FilterResultListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/OnPerformFilterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/OnPerformFilterListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/SearchResultListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/SearchResultListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/Searchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/java/ir/mirrajabi/searchdialog/core/Searchable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-hdpi/search_dialog_ic_search.png" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-hdpi/search_dialog_ic_search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-mdpi/search_dialog_ic_search.png" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-mdpi/search_dialog_ic_search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-xhdpi/search_dialog_ic_search.png" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-xhdpi/search_dialog_ic_search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-xxhdpi/search_dialog_ic_search.png" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/drawable-xxhdpi/search_dialog_ic_search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/drawable/drw_rectangle_popup_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/drawable/drw_rectangle_popup_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/layout/search_dialog_compat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/layout/search_dialog_compat.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchDialog/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchDialog/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -453,6 +226,34 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1289" y="291" key="AndroidCreateResourceFileDialog/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595944577435" />
+    <state width="1598" height="198" key="GridCell.Tab.0.bottom" timestamp="1595945118135">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1598" height="198" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595945118135" />
+    <state width="1598" height="198" key="GridCell.Tab.0.center" timestamp="1595945118135">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1598" height="198" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595945118135" />
+    <state width="1598" height="198" key="GridCell.Tab.0.left" timestamp="1595945118135">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1598" height="198" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595945118135" />
+    <state width="1598" height="198" key="GridCell.Tab.0.right" timestamp="1595945118135">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1598" height="198" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595945118135" />
+    <state x="-1277" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595945391045">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1277" y="265" key="Vcs.Push.Dialog.v2/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595945391045" />
+    <state x="-1598" y="131" width="1458" height="811" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1595945420446">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1598" y="131" width="1458" height="811" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1595945420446" />
+    <state x="-1341" y="254" width="672" height="678" key="search.everywhere.popup" timestamp="1595945919087">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1341" y="254" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595945919087" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -107,12 +107,10 @@ public class AddNewPlotActivity extends BaseActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
 
@@ -131,7 +129,6 @@ public class AddNewPlotActivity extends BaseActivity {
         if (intent.getStringExtra("flag") != null && intent.getStringExtra("flag").equals("edit")) {
             isEditMode = true;
             toolbar = setToolbar(getResources(R.string.edit_plot));
-
 
             plot = new Gson().fromJson(getIntent().getStringExtra("plot"), RealPlot.class);
             plotName.setText(plot.getName());
@@ -186,8 +183,6 @@ public class AddNewPlotActivity extends BaseActivity {
 
             plotAOFragment = MyFormFragment.newInstance(Constants.ADOPTION_OBSERVATIONS, true, plot.getFarmerCode() + "_" + plot.getId(), false);
 
-            loadDynamicView(plotAOFragment, R.id.aosLayout);
-
 
         } else {
 
@@ -235,10 +230,9 @@ public class AddNewPlotActivity extends BaseActivity {
 
             plotAOFragment = MyFormFragment.newInstance(Constants.ADOPTION_OBSERVATIONS, false, null, false);
 
-            loadDynamicView(plotAOFragment, R.id.aosLayout);
-
 
         }
+        loadDynamicView(plotAOFragment, R.id.aosLayout);
 
 
         findViewById(R.id.plot_area_calculation).setOnClickListener(new View.OnClickListener() {

@@ -73,7 +73,6 @@ import io.codetail.animation.ViewAnimationUtils;
  */
 
 public class MapActivity extends BaseActivity {
-
     public static Float DEFAULT_ZOOM = 17.0f;
     ProgressDialog progressDialog;
     String TAG = getClass().getSimpleName();
@@ -95,58 +94,37 @@ public class MapActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.setIndeterminate(true);
 
         recyclerView = findViewById(R.id.recycler_view);
 
-
         plot = new Gson().fromJson(getIntent().getStringExtra("plot"), RealPlot.class);
-
 
         Toolbar toolbar;
         if (plot != null) {
             toolbar = setToolbar(plot.getName() +" " + getResources(R.string.title_area_calc));
-
         } else {
             toolbar = setToolbar("Plot GPS Area Calculation");
-
-
         }
 
         Log.i(TAG, "PLOT POINTS " + plot.getGpsPoints());
 
         if (plot.getGpsPoints() != null && !plot.getGpsPoints().equalsIgnoreCase("")) {
-
-
             try {
                 String llgs[] = plot.getGpsPoints().split("_");
                 for (String llg : llgs) {
-
                     String values[] = llg.split(",");
-
                     latLngs.add(new LatLng(Double.parseDouble(values[0]), Double.parseDouble(values[1])));
                 }
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
-
 
         if (latLngs.size() > 0)
             findViewById(R.id.placeHolder).setVisibility(View.GONE);
-
-
-
-
-
-
-
 
         mAdapter = new PointsListAdapter(this, latLngs);
         mAdapter.setHasStableIds(true);
@@ -165,20 +143,14 @@ public class MapActivity extends BaseActivity {
                     else
                         calculateArea.setEnabled(false);
 
-
                 if(latLngs.size() > 0) {
                     if(findViewById(R.id.placeHolder).getVisibility() == View.VISIBLE)
                         findViewById(R.id.placeHolder).setVisibility(View.GONE);
 
-
-
                 }else{
-
                     if(findViewById(R.id.placeHolder).getVisibility() == View.GONE)
                         findViewById(R.id.placeHolder).setVisibility(View.VISIBLE);
-
                 }
-
             }
         });
 
@@ -189,21 +161,15 @@ public class MapActivity extends BaseActivity {
         calculateArea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (latLngs != null && latLngs.size() > 2) {
-
                 if (!hasCalculated) {
                     computeAreaInSquareMeters();
-
                 }else{
-
-
                     if (progressDialog.isShowing())
                         progressDialog.dismiss();
 
                     Double inHectares = convertToHectres(AREA_OF_PLOT);
                     Double inAcres = convertToAcres(AREA_OF_PLOT);
-
 
                     String message = "Area in Hectares is " + new DecimalFormat("0.00").format(inHectares) +
                             "\nArea in Acres is " + new DecimalFormat("0.00").format(inAcres) +
@@ -212,17 +178,13 @@ public class MapActivity extends BaseActivity {
                     showAlertDialog(false, "Area of plot " + plot.getName(), message, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
                                 dialogInterface.dismiss();
-
-
                             }
                     }, getResources(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
                             StringBuilder builder = new StringBuilder();
-
                             //Todo save latLngs
                             for (LatLng latLng : latLngs) {
 
@@ -230,39 +192,22 @@ public class MapActivity extends BaseActivity {
                                     builder.append(latLng.latitude).append(",").append(latLng.longitude).append("_");
                                 else
                                     builder.append(latLng.latitude).append(",").append(latLng.longitude);
-
                             }
 
-
                             Log.i(TAG, "STRING ARRAY OF LatLngs = " + builder);
-
                             dialog.dismiss();
 
                             if (databaseHelper.editPlotGPS(plot.getId(), builder.toString())) {
-
                                 CustomToast.makeToast(MapActivity.this, getResources(R.string.new_data_updated), Toast.LENGTH_LONG).show();
-
                             } else {
-
                                 CustomToast.makeToast(MapActivity.this, getResources(R.string.data_not_saved), Toast.LENGTH_LONG).show();
-
                             }
-
-
                         }
                     }, getResources(R.string.save), 0);
-
-
                         hasCalculated = true;
-
                 }
-
                 } else
                     CustomToast.makeToast(MapActivity.this, "Please add 3 or more points to calculate the area of " + plot.getName(), Toast.LENGTH_LONG).show();
-
-
-
-
             }
         });
 
@@ -274,18 +219,9 @@ public class MapActivity extends BaseActivity {
                 progressDialog.show();
                 addPoint.setEnabled(false);
                 getCurrentLocation();
-
             }
         });
-
-
-
-
-
-
-
         onBackClicked();
-
 
         locationListener = new android.location.LocationListener() {
             @Override
@@ -300,16 +236,13 @@ public class MapActivity extends BaseActivity {
                 //"Altitude : "+mCurrentLocation.getAltitude()+" high ";
                 //Toast.makeText(CustomerMapActivity.this, msg, Toast.LENGTH_LONG).show();
 
-
                 if (progressDialog.isShowing())
                     progressDialog.dismiss();
 
                 showAlertDialog(true, "Are you sure?", msg, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         dialog.dismiss();
-
                         LatLng newLL = new LatLng(location.getLatitude(), location.getLongitude());
                         mAdapter.addPoint(newLL);
                         addPoint.setEnabled(true);
@@ -319,18 +252,13 @@ public class MapActivity extends BaseActivity {
                         if (latLngs.size() > 0) {
                             if (findViewById(R.id.placeHolder).getVisibility() == View.VISIBLE)
                                 findViewById(R.id.placeHolder).setVisibility(View.GONE);
-
                         }
-
                         if (latLngs.size() > 2) {
                             calculateArea.setEnabled(true);
 
                         } else {
                             calculateArea.setEnabled(false);
-
                         }
-
-
                     }
                 }, "YES, CONTINUE", new DialogInterface.OnClickListener() {
                     @Override
@@ -338,42 +266,27 @@ public class MapActivity extends BaseActivity {
                         dialog.dismiss();
                     }
                 }, "NO, CANCEL", 0);
-
-
-
-
             }
 
             @Override
             public void onStatusChanged(String s, int i, Bundle bundle) {
-
             }
 
             @Override
             public void onProviderEnabled(String s) {
                 Log.i(TAG, "^^^^^^^^^^ PROVIDER ENABLED ^^^^^^^^^^^^");
-
             }
 
             @Override
             public void onProviderDisabled(String s) {
                 Log.i(TAG, "^^^^^^^^^^ PROVIDER DISABLED ^^^^^^^^^^^^");
-
-
             }
         };
-
-
-
     }
 
-
-
     void computeAreaInSquareMeters() {
-
         if (progressDialog.isShowing())
             progressDialog.dismiss();
-
 
             AREA_OF_PLOT = SphericalUtil.computeArea(latLngs);
             Log.d(TAG, "computeAreaInSquareMeters " + AREA_OF_PLOT);
@@ -436,44 +349,33 @@ public class MapActivity extends BaseActivity {
 
     }
 
-
     double convertToHectres(Double valueInSquareMetres) {
-
         return valueInSquareMetres / 10000;
-
     }
 
     double convertToAcres(Double valueInSquareMetres) {
-
         return valueInSquareMetres / 4040.856;
-
     }
 
-
-
     private void getCurrentLocation() {
-
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         GpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
         if (GpsStatus) {
-
             Criteria criteria = new Criteria();
             criteria.setAccuracy(Criteria.ACCURACY_FINE);
             criteria.setPowerRequirement(Criteria.POWER_HIGH);
-            criteria.setAltitudeRequired(false);
+            criteria.setAltitudeRequired(true);
             criteria.setBearingRequired(false);
             criteria.setSpeedRequired(false);
             criteria.setCostAllowed(true);
             criteria.setHorizontalAccuracy(Criteria.ACCURACY_HIGH);
             criteria.setVerticalAccuracy(Criteria.ACCURACY_HIGH);
 
-
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
             // This is the Best And IMPORTANT part
-            final Looper looper = null;
-
+            final Looper looper =  Looper.getMainLooper();
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 if (locationManager != null) {
@@ -481,12 +383,8 @@ public class MapActivity extends BaseActivity {
                 }
             }
         } else {
-
             CustomToast.makeToast(this, "Please Enable GPS First", Toast.LENGTH_LONG).show();
-
         }
-
-
     }
 
 
