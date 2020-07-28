@@ -407,8 +407,6 @@ public class AddNewPlotActivity extends BaseActivity {
 
 
             Log.d(TAG, "ALL PLOT ANSWERS JSON IS VALUE IS + \n" + ALL_DATA_JSON + "\n");
-
-
             List<Question> questionList = new ArrayList<>();
             questionList.addAll(databaseHelper.getSpecificSetOfQuestions(Constants.ADOPTION_OBSERVATION_RESULTS));
             questionList.addAll(databaseHelper.getSpecificSetOfQuestions(Constants.ADDITIONAL_INTERVENTION));
@@ -516,27 +514,20 @@ public class AddNewPlotActivity extends BaseActivity {
 
 
         }
-
-
     }
 
 
     void applyLogicAndGetValue(List<Question> questions) {
-
         String resultQuestionId = "", logicId = "";
         Boolean result = false;
 
 
         try {
-
-
             for (Question question : questions) {
                 System.out.println("***************************************************************");
                 Log.i(question.getId(), question.getCaption__c());
 
                 System.out.println("***************************************************************\n");
-
-
                 List<Logic> logics = databaseHelper.doesQuestionHaveLogics(question.getId());
 
                 if (logics.size() > 0) {
@@ -554,10 +545,6 @@ public class AddNewPlotActivity extends BaseActivity {
 
 
                         result = compareAndEvaluateCascadedLogics(logic, ALL_DATA_JSON);
-
-
-
-
 
                         if (result != null) {
 
@@ -804,7 +791,6 @@ public class AddNewPlotActivity extends BaseActivity {
                 .append(value3).append(logic3.getParentLogicalOperator())
                 .append(value4).append(logic4.getParentLogicalOperator())
                 .append(value5);
-
 
         equationValue = equation.toString().replace("null", "");
 

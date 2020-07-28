@@ -201,6 +201,7 @@ public class EditTextController extends MyLabeledFieldController {
         editText.setInputType(inputType);
 
 
+
         if(placeholder != null) {
             if(getModel().getValue(getName()) == null || getModel().getValue(getName()).toString().equalsIgnoreCase(""))
                 getModel().setValue(getName(), placeholder);

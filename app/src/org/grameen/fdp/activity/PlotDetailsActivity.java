@@ -125,11 +125,6 @@ public class PlotDetailsActivity extends BaseActivity {
                 }
 
 
-
-
-
-
-
             plotName.setText(plot.getName());
             String plotInfo = plot.getPlotInformationJson();
 
@@ -222,12 +217,12 @@ public class PlotDetailsActivity extends BaseActivity {
 
 
 
-                        /*if (!GAPS_RECOMENDATION_FOR_START_YEAR.getName().equalsIgnoreCase(PLOT_RECOMMENDATION.getName()))
+                       /* if (!GAPS_RECOMENDATION_FOR_START_YEAR.getName().equalsIgnoreCase(PLOT_RECOMMENDATION.getName()))
                             recNames = GAPS_RECOMENDATION_FOR_START_YEAR.getName() + ", " + PLOT_RECOMMENDATION.getName();
                         else
                             recNames = GAPS_RECOMENDATION_FOR_START_YEAR.getName();
-                            */
 
+*/
 
                         recommendedIntervention.setText(recNames);
                         recommendedIntervention.setTextColor(ContextCompat.getColor(PlotDetailsActivity.this, R.color.colorAccent));

@@ -46,8 +46,6 @@ import com.wooplr.spotlight.SpotlightConfig;
 import com.wooplr.spotlight.utils.SpotlightSequence;
 
 import org.grameen.fdp.R;
-import org.grameen.fdp.adapter.CustomSuggestionsAdapter;
-import org.grameen.fdp.adapter.FarmerListAdapter;
 import org.grameen.fdp.fragment.FarmerListFragment;
 import org.grameen.fdp.object.RealFarmer;
 import org.grameen.fdp.object.SearchModel;
@@ -56,16 +54,10 @@ import org.grameen.fdp.utility.Callbacks;
 import org.grameen.fdp.utility.Constants;
 import org.grameen.fdp.utility.CustomToast;
 import org.grameen.fdp.utility.DatabaseHelper;
-import org.grameen.fdp.utility.DateUtil;
 import org.grameen.fdp.utility.Utils;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.regex.Pattern;
-
-import br.com.mauker.materialsearchview.MaterialSearchView;
 import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat;
 import ir.mirrajabi.searchdialog.core.BaseSearchDialogCompat;
 import ir.mirrajabi.searchdialog.core.SearchResultListener;

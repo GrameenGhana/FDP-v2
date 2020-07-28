@@ -10,8 +10,8 @@ android {
         applicationId "org.grameen.fdp"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 10
-        versionName "1.7.3"
+        versionCode 12
+        versionName "1.7.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         buildConfigField 'boolean', 'ENABLE_CRASHLYTICS', 'true'
@@ -113,7 +113,6 @@ android {
         implementation 'com.android.support:percent:27.1.1'
         implementation 'com.jaredrummler:material-spinner:1.2.1'
         implementation 'br.com.mauker.materialsearchview:materialsearchview:1.2.3'
-        implementation 'com.github.mancj:MaterialSearchBar:0.7.6'
         implementation 'com.github.renaudcerrato:FloatingSearchView:1.0.1'
         implementation 'com.squareup.picasso:picasso:2.5.2'
         implementation 'de.codecrafters.tableview:tableview:2.8.0'

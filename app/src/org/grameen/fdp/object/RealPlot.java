@@ -11,7 +11,6 @@ public class RealPlot {
     String farmerCode;
     String recommendationId;
     String plotInformationJson;
-
     int startYear = 1;
     String gpsPoints;
 

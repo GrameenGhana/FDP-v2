@@ -58,7 +58,6 @@ import static org.grameen.fdp.utility.Constants.TYPE_TEXT;
 /**
  * Created by aangjnr on 20/12/2017.
  */
-
 public class PandLActivity extends BaseActivity implements Callbacks.NetworkActivityCompleteListener {
 
     String startYearId = "nil";
@@ -68,7 +67,6 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
 
     Boolean DID_LABOUR = false;
     String LABOUR_TYPE;
-
     Boolean shouldHideStartYear = null;
 
     String TAG = "P & L ACTIVITY";
@@ -105,8 +103,6 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
     List<String> NET_FAMILY_INCOME;
 
     String TOTAL_FAMILY_EXPENSES = "";
-
-
     List<String> TOTAL_INVESTMENT_IN_FDP;
     List<String> TOTAL_P_AND_L_LIST;
 
@@ -119,11 +115,8 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
 
     MyTableViewAdapter myTableViewAdapter;
     private JSONObject PLOT_ANSWERS_JSON_OBJECT = new JSONObject();
-
     JSONObject PLOT_SIZES_IN_HA;
-
     boolean isTranslation;
-
     static final int MAX_YEARS = 7;
 
 
@@ -184,10 +177,6 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
             });
 
         }
-
-
-
-
 
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -393,10 +382,7 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
         });
 
         thread.start();
-
-
         onBackClicked();
-
     }
 
 
@@ -859,6 +845,7 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
 
 
         } catch (JSONException e) {
+            e.printStackTrace();
             System.out.println("\n******* EXCEPTION *******   MESSAGE : " + e.getMessage() + "\n\n");
 
             try {
@@ -869,15 +856,9 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
 
             } catch (JSONException f) {
                 System.out.println("\n******* EXCEPTION *******   MESSAGE : " + f.getMessage() + "\n\n");
-
-
-
             }
         }
-
         System.out.println("\n******* VALUE IS *******   : " + defVal + "\n\n");
-
-
         return defVal;
     }
 
@@ -1147,9 +1128,6 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
         List<String> pandlist = new ArrayList<>();
 
 
-
-
-
         System.out.println("################################ \n CALCULATING MAINTENANCE COST \n ###################################");
 
         LaborDaysLaborCost lls1;
@@ -1220,6 +1198,8 @@ public class PandLActivity extends BaseActivity implements Callbacks.NetworkActi
 
                         labourCostList.add(applyCalculation( "(" + lls1.getLaborCost() + ") * " + plotSizeInHaValue));
                         labourDaysList.add(applyCalculation( "(" + lls1.getLaborDays() + ") * " + plotSizeInHaValue));
+
+
                     } else {
                         labourCostList.add("0.0");
                         labourDaysList.add("0.0");
