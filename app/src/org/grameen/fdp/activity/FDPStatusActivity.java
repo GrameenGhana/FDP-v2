@@ -34,8 +34,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 
 public class FDPStatusActivity extends BaseActivity {
-
-
     EditText farmerName;
     EditText farmerCode;
     TextView takePhoto;
@@ -58,11 +56,6 @@ public class FDPStatusActivity extends BaseActivity {
     String[] educationLevels = {"Primary", "Secondary", "Tertiary", "Professional Course", "Other"};
     String[] genders = {"Male", "Female"};
     private boolean newDataSaved = false;
-
-
-
-
-
 
 
     @Override

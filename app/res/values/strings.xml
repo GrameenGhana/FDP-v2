@@ -448,6 +448,7 @@
     <string name="no_network_device">No Net Printer Found</string>
     <string name="netPrinterListTitle_label">Net Printer</string>
     <string name="search_printer">Searching…</string>
-
+    <string name="add_gps_point">add gps point</string>
+    <string name="calculate_area">calculate area</string>
 
 </resources>

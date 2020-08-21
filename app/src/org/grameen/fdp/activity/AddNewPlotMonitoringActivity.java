@@ -60,7 +60,7 @@ import javax.script.ScriptException;
  * Created by aangjnr on 09/11/2017.
  */
 
-public class AddNewPlotMonitoringActivity extends BaseActivity implements Callbacks.AnItemSelectedListener{
+public class AddNewPlotMonitoringActivity extends BaseActivity implements Callbacks.AnItemSelectedListener {
 
     String TAG = "ADD NEW MONITORING ACTIVITY";
     RealPlot plot;
@@ -74,11 +74,12 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
 
     ProgressBar recommendationProgress;
     
-    List <View> ALL_VIEWS_LIST = new ArrayList<>();
+
     private List<Recommendation> recommendations;
 
     List<Question> aoMonitoringQuestions;
 
+    List <View> ALL_VIEWS_LIST = new ArrayList<>();
     Boolean IS_NEW_MONITORING;
     String selectedYear = "";
     int SELECTED_MONITORING_ID;
@@ -156,8 +157,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-
-
                 }
 
             String plotInfo = plot.getPlotInformationJson();
@@ -207,13 +206,8 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
 
             recommendedIntervention.setText(value);
 
-
-
-
-
             IS_NEW_MONITORING = getIntent().getBooleanExtra("isNewMonitoring", false);
             selectedYear = String.valueOf(getIntent().getIntExtra("year", -1));
-
 
             monitoringAOLayout.setAlpha(0f);
 
@@ -290,8 +284,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
-
                     for (final Question q : aoMonitoringQuestions) {
                         q.setOptions__c(q.getOptions__c() + ",Select");
 
@@ -333,7 +325,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
         findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if(saveData()) {
 
                     int year = Integer.parseInt(selectedYear);
@@ -343,16 +334,14 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
 
                         if (year > oldYear) {
                             prefs.edit().putInt(plot.getFarmerCode(), year).apply();
-
-
                         }
-
                     }
 
                     //Todo go to plot activity, reload vp
 
                     prefs.edit().putBoolean("refreshViewPager", true).apply();
                     finish();
+
                 }
             }
         });
@@ -361,12 +350,9 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
         onBackClicked();
 
 
-
     }
 
-
-/*
-    String getAnswerValue(String s) {
+/*String getAnswerValue(String s) {
 
         String defVal = "--";
 
@@ -525,8 +511,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
         }else {
 
             final List<String>items = q.formatQuestionOptions();
-
-
 
             final Spinner spinner = new Spinner(this);
             spinner.setPrompt("Select");
@@ -752,10 +736,7 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
         return view;
     }
 
-
-
-
-    private void refresh(Spinner spinner, @Nullable String defValue, List<String>items ) {
+    private void refresh(Spinner spinner, @Nullable String defValue, List<String>items) {
          int selectionIndex = items.size() - 1;    // index of last item shows the 'prompt'
 
 
@@ -772,13 +753,11 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
         spinner.setSelection(selectionIndex);
     }
 
-
     public void putDynamicAnswersInMainJson() {
 
         Log.i(TAG, "&&&&&&&&&&&&&&&   GETTING FARM ASSESSMENT!  &&&&&&&&&&&&&&&&&&");
 
         for (Question q : plotMonitoringAOFragment.getQuestions()) {
-
 
             try {
 
@@ -904,7 +883,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
 
     }
 
-
     Boolean saveData(){
         Boolean value = false;
 
@@ -963,8 +941,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
     }
 
     void setUpSkipLogics(Question q, String value) {
-
-
         final List<SkipLogic> skipLogics = databaseHelper.doesQuestionHaveSkipLogics(q.getId());
 
         if (skipLogics != null && skipLogics.size() > 0) {
@@ -1030,32 +1006,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
                                         break;
                                     }
                                 }
-
-/*
-                                if (sl.getActionToBeTaken().equalsIgnoreCase(Constants.HIDE)) {
-                                    for(int i = 0; i < ALL_VIEWS_LIST.size(); i++){
-
-                                        if(ALL_VIEWS_LIST.get(i).getTag().equals(sl.getQuestionShowHide())) {
-                                            ALL_VIEWS_LIST.get(i).setVisibility(View.VISIBLE);
-                                            ALL_VIEWS_LIST.get(i).setEnabled(true);
-
-                                            break;
-                                        }
-                                    }
-                                }
-                                else {
-
-                                    for(int i = 0; i < ALL_VIEWS_LIST.size(); i++){
-
-                                        if(ALL_VIEWS_LIST.get(i).getTag().equals(sl.getQuestionShowHide())) {
-                                            ALL_VIEWS_LIST.get(i).setVisibility(View.INVISIBLE);
-                                            ALL_VIEWS_LIST.get(i).setEnabled(false);
-
-                                            break;
-                                        }
-                                    }
-
-                                }*/
                             }
 
 
@@ -1094,7 +1044,6 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
                     try {
                         if (compareValues(sl, getValue(q.getId(), ALL_MONITORING_VALUES_JSON))) {
 
-
                             if (sl.getActionToBeTaken().equalsIgnoreCase(Constants.HIDE)) {
 
                                 Log.i("PROPERTY CHANGE ", "Looping... ");
@@ -1104,30 +1053,21 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
                                     if(ALL_VIEWS_LIST.get(i).getTag().equals(sl.getQuestionShowHide())) {
                                         ALL_VIEWS_LIST.get(i).setVisibility(View.INVISIBLE);
                                         ALL_VIEWS_LIST.get(i).setEnabled(false);
-
-
                                         break;
                                     }
                                 }
+                            } else {
+                                for (int i = 0; i < ALL_VIEWS_LIST.size(); i++) {
 
-
-                            }
-
-                            else {
-                                for(int i = 0; i < ALL_VIEWS_LIST.size(); i++){
-
-                                    if(ALL_VIEWS_LIST.get(i).getTag().equals(sl.getQuestionShowHide())) {
+                                    if (ALL_VIEWS_LIST.get(i).getTag().equals(sl.getQuestionShowHide())) {
                                         ALL_VIEWS_LIST.get(i).setVisibility(View.VISIBLE);
                                         ALL_VIEWS_LIST.get(i).setEnabled(true);
 
                                         break;
                                     }
                                 }
-
                             }
-
                         } else {
-
                             if (sl.getActionToBeTaken().equalsIgnoreCase(Constants.HIDE)) {
                                 for(int i = 0; i < ALL_VIEWS_LIST.size(); i++){
 
@@ -1165,15 +1105,9 @@ public class AddNewPlotMonitoringActivity extends BaseActivity implements Callba
         }
     }
 
-
-
-
     @Override
     public void onItemSelected(String item) {
-
-
         Log.i(TAG, "*********** &&&&&&&& ***********  SELECTED ITEM IS " + item);
-
 
         if(item != null)
             if(item.equalsIgnoreCase("manager")){

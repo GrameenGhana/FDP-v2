@@ -59,19 +59,12 @@ public class MonitoringFormFragment extends FormFragment {
     List<Question> questions = new ArrayList<>();
     MyFormSectionController formSectionController;
     DatabaseHelper databaseHelper;
-     static Callbacks.AnItemSelectedListener anItemSelectedListener;
-
+    static Callbacks.AnItemSelectedListener anItemSelectedListener;
     boolean shouldLoadOldValues = false;
     boolean isEnabled;
-
     String TAG = "MYFORMFRAGMENT";
     String VALUES_JSON_STRING = "";
-
-
     MyFormSectionController MONITORING_PLOT_INFO_SECTION_CONTROLLER;
-
-
-
     List<Question> monitoringPlotInfoQuestions;
 
     ScriptEngine engine;
@@ -356,15 +349,8 @@ public class MonitoringFormFragment extends FormFragment {
 
 
                 if(q.getTranslation__c().equalsIgnoreCase("Observation By")){
-
-
-
                     if(anItemSelectedListener != null)
                     anItemSelectedListener.onItemSelected(event.getNewValue().toString());
-
-
-
-
                 }
 
             }
@@ -552,7 +538,6 @@ public class MonitoringFormFragment extends FormFragment {
             final List<SkipLogic> skipLogics = databaseHelper.doesQuestionHaveSkipLogics(q.getId());
 
             if (skipLogics != null && skipLogics.size() > 0) {
-
 
                 final String caption = q.getCaption__c();
 

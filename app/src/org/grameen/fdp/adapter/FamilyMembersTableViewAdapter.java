@@ -1,22 +1,16 @@
 package org.grameen.fdp.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.view.ContextThemeWrapper;
 import android.text.Editable;
 import android.text.InputType;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -25,12 +19,7 @@ import android.widget.TextView;
 
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
-import org.grameen.fdp.R;
-import org.grameen.fdp.activity.AddNewPlotMonitoringActivity;
-import org.grameen.fdp.activity.FamilyMembersActivity;
-import org.grameen.fdp.object.Data;
 import org.grameen.fdp.object.FamilyMembersData;
-import org.grameen.fdp.object.Input;
 import org.grameen.fdp.object.Question;
 import org.grameen.fdp.utility.Constants;
 import org.json.JSONArray;
@@ -41,13 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.codecrafters.tableview.TableDataAdapter;
-
-import static org.grameen.fdp.utility.Constants.BUTTON_VIEW;
-import static org.grameen.fdp.utility.Constants.TAG_OTHER_TEXT_VIEW;
-import static org.grameen.fdp.utility.Constants.TAG_RESULTS;
-import static org.grameen.fdp.utility.Constants.TAG_TITLE_TEXT_VIEW;
-import static org.grameen.fdp.utility.Constants.TAG_VIEW;
-import static org.grameen.fdp.utility.Constants.TYPE_NUMBER_DECIMAL;
 
 /**
  * Created by aangjnr on 17/01/2018.

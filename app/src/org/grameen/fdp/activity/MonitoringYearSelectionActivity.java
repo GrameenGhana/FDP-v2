@@ -231,7 +231,7 @@ public class MonitoringYearSelectionActivity extends BaseActivity {
 
         ListView listView = findViewById(R.id.list_view);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, YEARS);
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, YEARS);
 
         listView.setAdapter(adapter);
 

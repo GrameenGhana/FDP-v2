@@ -1,31 +1,17 @@
 package org.grameen.fdp.viewholder;
 
-import android.support.annotation.NonNull;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.grameen.fdp.R;
-import org.grameen.fdp.activity.FamilyMembersActivity_v2;
+import org.grameen.fdp.activity.FamilyMembersActivity;
 import org.grameen.fdp.object.Question;
 import org.grameen.fdp.utility.Callbacks;
-import org.grameen.fdp.utility.Constants;
-import org.json.JSONException;
-
-import java.util.List;
 
 /**
  * Created by aangjnr on 22/02/2018.
@@ -94,7 +80,7 @@ public class CheckBoxViewHolder extends AbstractViewHolder {
 
         checkBox.setText("YES");
 
-        String defVal = FamilyMembersActivity_v2.getValue(rowPosition, q.getId());
+        String defVal = FamilyMembersActivity.getValue(rowPosition, q.getId());
 
                  if(defVal != null && defVal.equalsIgnoreCase("yes")) {
                      checkBox.setChecked(true);

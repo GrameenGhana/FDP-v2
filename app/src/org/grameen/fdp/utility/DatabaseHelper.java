@@ -445,8 +445,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         Form form = new Form();
                         form.setType(cursor.getString(cursor.getColumnIndex(QUESTION_FORM_TYPE)));
                         form.setName(cursor.getString(cursor.getColumnIndex(QUESTION_FORM_NAME)));
-
-
                         question.setId(cursor.getString(cursor.getColumnIndex(QUESTION_ID)));
                         question.setName(cursor.getString(cursor.getColumnIndex(QUESTION_NAME)));
 
@@ -1358,7 +1356,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-
     public Boolean editAnswerToQuestion(String farmerId, String id, String newValue) {
 
         try {
@@ -1389,7 +1386,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ContentValues contentValues = new ContentValues();
             contentValues.put(ANSWERS_JSON, jsonObject.toString());
             db.update(FARMER_TABLE, contentValues, FARMER_ID + "= ?", new String[]{farmerId});
-            Log.d(TAG, "DATA\t" + jsonObject.toString() + "ADDED\n FOR FARMER WITH ID " + farmerId);
+            //Log.d(TAG, "DATA\t" + jsonObject.toString() + "ADDED\n FOR FARMER WITH ID " + farmerId);
 
             setFarmerAsUnSynced(farmerId);
 
@@ -1400,7 +1397,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return true;
     }
-
 
     public String getAllAnswersJson(String id) {
 
@@ -1503,35 +1499,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    Boolean parseBoolean(String value) {
-        if (value.equalsIgnoreCase("true"))
-            return true;
-        else if (value.equalsIgnoreCase("false"))
-            return false;
-        else return null;
-    }
 
     public String getSystemTime() {
         return String.valueOf(System.currentTimeMillis());
 
     }
 
-    public String getTime() {
-
-        return new SimpleDateFormat("h:mm a", Locale.getDefault())
-                .format(Calendar.getInstance().getTime());
-
-    }
 
     public String getDate() {
         return new SimpleDateFormat("MMM d", Locale.getDefault())
                 .format(Calendar.getInstance().getTime());
     }
 
-    public String getRandomAlphaNumericString() {
-        return new BigInteger(130, new SecureRandom()).toString(32);
 
-    }
 
 
       boolean addForm(Form form) {
@@ -1595,26 +1575,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return formList.contains(testString);
     }
 
-    public boolean deleteForm(String id) {
-
-        return db.delete(FORMS_TABLE, FORM_TYPE + " = ? ", new String[]{id}) > 0;
-
-    }
-
-     public boolean deleteFormsTable() {
-
-        try {
-            db.execSQL("DELETE FROM " + FORMS_TABLE);
-
-            Log.i("DATABASE", "FORMS TABLE DELETED");
-
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return false;
-        }
-    }
 
 
     public List<Form> getAllDiagnosticForms() {
@@ -1913,24 +1873,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-   /* public boolean deleteVillagesTable() {
-
-        try {
-
-
-            db.execSQL("DELETE FROM " + VILLAGES_TABLE);
-
-            Log.i("DATABASE", "VILLAGES TABLE DELETED");
-
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return false;
-        }
-    }*/
-
-
     public String getVillageId(String name) {
 
         String id = "";
@@ -2054,41 +1996,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public List<String> getAllVillageNames() {
-
         List<String> villages;
         Cursor cursor = null;
-
         try {
-
             villages = new ArrayList<>();
-
             String selectQuery = "SELECT  * FROM " + VILLAGES_TABLE;
             Log.i("QUERY", selectQuery);
-
             cursor = db.rawQuery(selectQuery, null);
-
             if (cursor != null && cursor.getCount() > 0) {
-
                 if (cursor.moveToFirst())
-
                     do {
-
-
                         villages.add(cursor.getString(cursor.getColumnIndex(VILLAGE_NAME)));
-
-
                     } while (cursor.moveToNext());
             }
         } catch (Exception e) {
             e.printStackTrace();
             return null;
-
         } finally {
-
             if (cursor != null)
                 cursor.close();
         }
-
 
         return sortVillagesByNameInAscendingOrder(villages);
 
@@ -2120,11 +2047,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean deleteCountry(String id) {
-
-        return db.delete(COUNTRIES_TABLE, COUNTRY_ID + " = ? ", new String[]{id}) > 0;
-
-    }
 
     public boolean deleteCountriesTable() {
 
@@ -2269,13 +2191,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean editPlotGPS(String plotId, String newValue) {
         try {
-
             ContentValues contentValues = new ContentValues();
             contentValues.put(PLOT_GPS_POINTS, newValue);
-
             db.update(PLOTS_TABLE, contentValues, ID + "= ?", new String[]{plotId});
             Log.i(TAG, "PLOT GPS POINTS! " + "NEW VALUE IS " + newValue);
-
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -2815,11 +2734,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Collections.sort(recommendations, new Comparator<Calculation>() {
                 @Override
                 public int compare(Calculation o, Calculation t1) {
-
                     Integer value1;
                     Integer value2;
-
-
                     try {
 
                         value1 =  o.getHierarchy();
@@ -2831,12 +2747,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                     } catch (Exception e) {
                         e.printStackTrace();
-
                         return 1;
-
                     }
-
-
                 }
             });
 
@@ -3077,6 +2989,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return recommendations;
 
     }
+
+
 
     public Recommendation getRecommendationBasedOnName(String name) {
 
@@ -3906,6 +3820,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
+
+
 
 
     public LaborDaysLaborCost getTotalLaborDaysLaborCostByYear(String year, String recommendationId) {

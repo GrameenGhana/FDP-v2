@@ -78,16 +78,13 @@
 				  android:screenOrientation="landscape" />
         <activity android:name=".activity.DetailedYearMonthlyActivity"
 				  android:screenOrientation="landscape" />
-        <activity android:name=".activity.FamilyMembersActivity"
-			android:screenOrientation="landscape"
-			android:windowSoftInputMode="adjustNothing"/>
 		<activity android:name=".activity.MonitoringYearSelectionActivity" />
 		<activity android:name=".activity.PlotMonitoringActivity"
 			android:screenOrientation="landscape"
 			android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".activity.AddNewPlotMonitoringActivity" />
         <activity android:name=".activity.FarmAssessmentActivity" />
-        <activity android:name=".activity.FamilyMembersActivity_v2"
+        <activity android:name=".activity.FamilyMembersActivity"
 			android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustNothing"
 

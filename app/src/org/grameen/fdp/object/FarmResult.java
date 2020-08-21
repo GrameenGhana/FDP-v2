@@ -7,12 +7,9 @@ import java.util.List;
  */
 
 public class FarmResult {
-
-
     String caption;
     String status;
     List<PlotAssessment> plotAssessmentList;
-
 
 
     public FarmResult(){}

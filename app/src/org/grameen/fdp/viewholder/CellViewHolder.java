@@ -1,38 +1,24 @@
 package org.grameen.fdp.viewholder;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.InputType;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.grameen.fdp.R;
-import org.grameen.fdp.activity.FamilyMembersActivity_v2;
+import org.grameen.fdp.activity.FamilyMembersActivity;
 import org.grameen.fdp.object.Question;
 import org.grameen.fdp.utility.Callbacks;
 import org.grameen.fdp.utility.Constants;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 
 /**
  * Created by aangjnr on 22/02/2018.
@@ -100,7 +86,7 @@ public class CellViewHolder extends AbstractViewHolder {
             editText.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
 
 
-        editText.setHint(FamilyMembersActivity_v2.getValue(rowPosition, q.getId()));
+        editText.setHint(FamilyMembersActivity.getValue(rowPosition, q.getId()));
         //editText.setError(q.getHelp_Text__c());
         //editText.setErrorColor(R.color.divider_2);
         //editText.setHelperTextAlwaysShown(true);

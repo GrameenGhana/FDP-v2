@@ -1,21 +1,15 @@
 package org.grameen.fdp.viewholder;
 
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.grameen.fdp.R;
-import org.grameen.fdp.activity.FamilyMembersActivity_v2;
 import org.grameen.fdp.object.Question;
 import org.grameen.fdp.utility.Callbacks;
-import org.grameen.fdp.utility.Constants;
 
 /**
  * Created by aangjnr on 22/02/2018.

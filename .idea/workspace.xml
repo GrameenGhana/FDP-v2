@@ -18,8 +18,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ffcf1e-b9c7-473c-91cf-1661c73aea8f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/debug/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/drawable-hdpi/ic_action_scuba_tank_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/drawable-mdpi/ic_action_scuba_tank_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/drawable-xhdpi/ic_action_scuba_tank_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxhdpi/ic_action_scuba_tank_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/drawable-xxxhdpi/ic_action_scuba_tank_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/drawable/ic_baseline_menu_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/layout/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/layout/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/layout/activity_monitoring_year_selection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/layout/activity_monitoring_year_selection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/layout/custom_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/layout/custom_toolbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/menu/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/values-fr/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/values-id/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/values-in/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/AddNewPlotActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/AddNewPlotActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/AddNewPlotMonitoringActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/AddNewPlotMonitoringActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/Add_EditFarmerDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/Add_EditFarmerDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/BaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/DetailedYearMonthlyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/DetailedYearMonthlyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FDPStatusActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FDPStatusActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FamilyMembersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FamilyMembersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FamilyMembersActivity_v2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FarmAssessmentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FarmAssessmentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FarmerDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/FarmerDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MapActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MonitoringYearSelectionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/MonitoringYearSelectionActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PandLActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PandLActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PlotMonitoringActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PlotMonitoringActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PlotsReviewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/PlotsReviewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/SyncUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/activity/SyncUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/adapter/FamilyMembersTableViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/adapter/FamilyMembersTableViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/adapter/MyTableViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/adapter/MyTableViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/fragment/MonitoringFormFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/fragment/MonitoringFormFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/object/FarmResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/object/FarmResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/object/PlotAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/object/PlotAssessment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/syncObjects/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/syncObjects/Farmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/Callbacks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/Callbacks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/CustomToast.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/CustomToast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/DatabaseDataClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/DatabaseDataClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/utility/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/CellViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/CellViewHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/CheckBoxViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/CheckBoxViewHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/SpinnerViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/SpinnerViewHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/TextViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/org/grameen/fdp/viewholder/TextViewHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile_sdk/._.DS_Store" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/gradlew" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/hybrid/HybridSampleApps/AccountEditor/assets/www/AccountEditor.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobile_sdk/salesforcemobilesdk-android/hybrid/HybridSampleApps/AccountEditor/assets/www/AccountEditor.html" afterDir="false" />
@@ -78,7 +135,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -250,6 +307,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1598" y="131" width="1458" height="811" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1595945420446" />
+    <state x="-1232" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1598027152357">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1232" y="385" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1598027152357" />
     <state x="-1341" y="254" width="672" height="678" key="search.everywhere.popup" timestamp="1595945919087">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>

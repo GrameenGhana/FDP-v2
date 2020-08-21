@@ -105,15 +105,11 @@ public class DatabaseDataClass {
     static final String RECOMMENDATION_ID = "recommendationId";
     static final String PLOT_GPS_POINTS = "gps_points";
 
-
-
     static final String MONITORING_TABLE = "Monitoring_Table";
     static final String MONITORING_NAME = "name";
     static final String MONITORING_JSON = "json_object";
     static final String MONITORING_PLOT_ID = "plotId";
     static final String MONITORING_YEAR = "year";
-
-
 
     public static final String COMPLEX_CALCULATIONS_TABLE = "complex_calculations_table";
     static final String COMPLEX_CALCULATION_QUESTION_ID = "question_id";
@@ -122,8 +118,6 @@ public class DatabaseDataClass {
 
 
     static final String NAME = "name";
-
-
 
     public  static final String SKIP_LOGIC_TABLE = "skip_logic";
     static final String ID = "id";
@@ -134,7 +128,6 @@ public class DatabaseDataClass {
     static final String SKIP_LOGIC_QUESTION_AFFECTED_ID = "question_affected_id";
     static final String SKIP_LOGIC_OPERATOR = "logical_operand";
     static final String SKIP_LOGIC_ACTION_TAKEN = "action";
-
 
     public static final String CALCULATIONS_TABLE = "calculations_table";
     static final String CALCULATIONS_NAME = "name";
@@ -147,7 +140,6 @@ public class DatabaseDataClass {
     static final String CALCULATIONS_OP3 = "op3";
     static final String HIERARCHY = "hierarchy";
     static final String CALCULATIONS_RESULT_QUESTION = "result_question";
-
 
     public static final String RECOMMENDATIONS_TABLE = "recommendations_table";
     static final String RECOMMENDATIONS_NAME = "name";
@@ -280,11 +272,6 @@ public class DatabaseDataClass {
     static final String DROP_COMPLEX_CALCULATIONS_TABLE = "drop table if exists " + COMPLEX_CALCULATIONS_TABLE;
     static final String DROP_HISTORICAL_DATA_TABLE = "drop table if exists " + HISTORICAL_DATA;
 
-
-
-
-
-
     static final String CREATE_PLOTS_TABLE = "CREATE TABLE IF NOT EXISTS " + PLOTS_TABLE + "("
             + BaseColumns._ID + " integer primary key autoincrement, "
             + FARMER_CODE + TEXT_TYPE + COMMA
@@ -298,8 +285,6 @@ public class DatabaseDataClass {
             + PLOT_GPS_POINTS + TEXT_TYPE + COMMA
 
             + START_YEAR + " integer" + ")";
-
-
 
     static final String CREATE_FARMER_TABLE = "CREATE TABLE IF NOT EXISTS " + FARMER_TABLE + "("
             + BaseColumns._ID + " integer primary key autoincrement, "

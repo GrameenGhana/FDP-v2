@@ -30,7 +30,6 @@ import org.grameen.fdp.object.Form;
 import org.grameen.fdp.object.Logic;
 import org.grameen.fdp.object.Monitoring;
 import org.grameen.fdp.object.PlotAssessment;
-import org.grameen.fdp.object.Question;
 import org.grameen.fdp.object.RealFarmer;
 import org.grameen.fdp.object.RealPlot;
 import org.grameen.fdp.object.SearchModel;
@@ -61,7 +60,6 @@ import ir.mirrajabi.searchdialog.core.SearchResultListener;
  */
 
 public class FarmerDetailsActivity extends BaseActivity implements Callbacks.NetworkActivityCompleteListener {
-
     boolean itemsLoaded = false;
     RealFarmer farmer;
     TextView name;
@@ -91,13 +89,8 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
     String TAG = "FarmerDetailsActivity";
 
     JSONObject FARM_RESULTS;
-
-
     RecyclerView plotsRecyclerView;
-    //boolean monitoringMode = false;
-    private ImageView editFarmerDetails;
     private TextView noOfPlots;
-
     ArrayList<SearchModel> HISTORICAL_FORMS_LIST = new ArrayList<>();
 
 
@@ -105,22 +98,23 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farmer_details);
-        Toolbar toolbar = setToolbar(getResources(R.string.farmer_details));
 
+        setToolbar(getResources(R.string.farmer_details));
 
-        name = (TextView) findViewById(R.id.name);
-        code = (TextView) findViewById(R.id.code);
-        initials = (TextView) findViewById(R.id.initials);
-        villageName = (TextView) findViewById(R.id.villageName);
-        landArea = (TextView) findViewById(R.id.landSize);
+        name =  findViewById(R.id.name);
+        code =  findViewById(R.id.code);
+        initials = findViewById(R.id.initials);
+        villageName = findViewById(R.id.villageName);
+        landArea =  findViewById(R.id.landSize);
         lastSyncDate = findViewById(R.id.lastSyncDate);
-        lastVisitDate = (TextView) findViewById(R.id.lastVisitDate);
+        lastVisitDate =  findViewById(R.id.lastVisitDate);
         syncIndicator = findViewById(R.id.syncIndicator);
-        editFarmerDetails = (ImageView) findViewById(R.id.edit);
-        plotsRecyclerView = (RecyclerView) findViewById(R.id.plotsRecyclerView);
-        addPlot = (TextView) findViewById(R.id.addPlot);
-        noOfPlots = (TextView) findViewById(R.id.noOfPlots);
-        circleImageView = (CircleImageView) findViewById(R.id.photo);
+        //boolean monitoringMode = false;
+
+        plotsRecyclerView = findViewById(R.id.plotsRecyclerView);
+        addPlot = findViewById(R.id.addPlot);
+        noOfPlots = findViewById(R.id.noOfPlots);
+        circleImageView = findViewById(R.id.photo);
 
         IS_MONITIRING_MODE = prefs.getString("flag", "").equals(Constants.MONITORING);
 
@@ -132,9 +126,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
 
             findViewById(R.id.edit).setVisibility(View.GONE);
             findViewById(R.id.addPlot).setVisibility(View.GONE);
-
-
-
         }else
             findViewById(R.id.farm_assessment_layout).setVisibility(View.GONE);
 
@@ -142,24 +133,16 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
         farmer = new Gson().fromJson(getIntent().getStringExtra("farmer"), RealFarmer.class);
 
         if (farmer != null) {
-
             initializeViews(true);
-
-
             addPlot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     //Todo go to add plot activity
                     Intent intent = new Intent(FarmerDetailsActivity.this, AddNewPlotActivity.class);
                     intent.putExtra("farmerCode", farmer.getId());
                     startActivity(intent);
-
-
                 }
             });
-
-
         } else {
 
             Toast.makeText(this, getResources(R.string.error_getting_farmer_info), Toast.LENGTH_SHORT).show();
@@ -169,17 +152,12 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
         findViewById(R.id.sync_farmer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (farmer.getSyncStatus() != Constants.SYNC_OK) {
-
                     Intent intent = new Intent(FarmerDetailsActivity.this, SyncUpActivity.class);
                     intent.putExtra("farmer", new Gson().toJson(farmer));
                     startActivity(intent);
                 } else
                     CustomToast.makeToast(FarmerDetailsActivity.this, getResources(R.string.farmer) + " " + farmer.getFarmerName() + getResources(R.string.apostrophe_s) + getResources(R.string.data_already_synced), Toast.LENGTH_LONG).show();
-
-
             }
         });
 
@@ -191,8 +169,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                 Intent intent = new Intent(FarmerDetailsActivity.this, PlotsReviewActivity.class);
                 intent.putExtra("farmerCode", farmer.getId());
                 startActivity(intent);
-
-
             }
         });
 
@@ -207,50 +183,38 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                 }
             });
         }
-
-
         onBackClicked();
-
-
     }
 
 
     void showSelectFormDialog() {
-
-        new SimpleSearchDialogCompat(this, "Select a form",
+        new SimpleSearchDialogCompat<>(this, "Select a form",
                 "", null, HISTORICAL_FORMS_LIST,
                 new SearchResultListener<SearchModel>() {
                     @Override
                     public void onSelected(BaseSearchDialogCompat dialog, SearchModel item, int position) {
-
                         final Intent intent = new Intent(FarmerDetailsActivity.this, HistoricalDataActivity.class);
                         intent.putExtra("farmer", new Gson().toJson(farmer));
                         intent.putExtra("formId", item.getId());
                         intent.putExtra("formName", item.getTitle());
                         dialog.dismiss();
-
-
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 startActivity(intent);
                             }
                         }, 500);
-
-
                     }
                 }).show();
     }
 
 
     void initializeViews(Boolean loadButtons) {
-
         try {
             ALL_FARMER_ANSWERS_JSON = new JSONObject(databaseHelper.getAllAnswersJson(farmer.getId()));
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
 
         name.setText(farmer.getFarmerName());
         code.setText(farmer.getCode());
@@ -268,28 +232,20 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
             }
         }
 
-
         try{
-
             String farmAcre = ALL_FARMER_ANSWERS_JSON.getString(prefs.getString("totalLandSize", ""));
             String totalUnit = ALL_FARMER_ANSWERS_JSON.getString(prefs.getString("totalAreaUnit", ""));
 
-            landArea.setText(farmAcre + " " + totalUnit);
+            landArea.setText(String.format("%s %s", farmAcre, totalUnit));
 
         } catch (Exception ignored) {
-            //e.printStackTrace();
-
             landArea.setVisibility(View.GONE);
-
         }
-
 
         lastSyncDate.setText(farmer.getLastVisitDate());
         lastVisitDate.setText(farmer.getLastModifiedDate());
 
-
         setUpPlotsAdapter();
-
         if (farmer.getImageUrl() != null && !farmer.getImageUrl().equals("")) {
 
             circleImageView.setImageBitmap(ImageUtil.base64ToBitmap(farmer.getImageUrl()));
@@ -303,27 +259,18 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                 }
             });
             initials.setText("");
-
-            //Picasso.with(this).load(farmer.getImageUrl()).resize(200, 200).into(circleImageView);
-
         } else {
-
             try {
                 String[] valueArray = farmer.getFarmerName().split(" ");
                 String value = valueArray[0].substring(0, 1) + valueArray[1].substring(0, 1);
                 initials.setText(value);
 
             } catch (Exception e) {
-
                 initials.setText(farmer.getFarmerName().substring(0, 1));
-
-
             }
 
             int[] mColors = getResources().getIntArray(R.array.recommendations_colors);
-
             int randomColor = mColors[new Random().nextInt(mColors.length)];
-
             GradientDrawable drawable = new GradientDrawable();
             drawable.setCornerRadius(1000);
             drawable.setColor(randomColor);
@@ -337,66 +284,38 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
             });
         }
 
-
-
-
         if (loadButtons) {
-            final LinearLayout dynamicButtonsLayout = (LinearLayout) findViewById(R.id.dynamicButtons);
+            final LinearLayout dynamicButtonsLayout = findViewById(R.id.dynamicButtons);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
 
-
-
-
             for (final Form f : FORMS) {
-
                 HISTORICAL_FORMS_LIST.add(new SearchModel(f.getId(), (prefs.getBoolean("toggleTranslation", false)) ? f.getTranslation() : f.getDiaplayName()));
-
                 final Button btn;
-
-
                 if (IS_MONITIRING_MODE) {
-
-                    Log.i(TAG, "IS MONITORING MODE");
-
-                    Log.i(TAG, "FORM TYPE IS " + f.getType());
-
                     if (f.getType().equalsIgnoreCase(Constants.DIAGNOSTIC))
                         btn = new Button(new ContextThemeWrapper(this, R.style.PrimaryButton));
                     else
                         btn = new Button(new ContextThemeWrapper(this, R.style.PrimaryButton_Monitoring));
-
-
                 } else
                     btn = new Button(new ContextThemeWrapper(this, R.style.PrimaryButton));
-
-
-                //btn.setId(f.getId());
 
                 btn.setText((prefs.getBoolean("toggleTranslation", false)) ? f.getTranslation() : f.getDiaplayName());
                 btn.setTag(f.getName());
                 btn.setContentDescription(f.getName());
                 dynamicButtonsLayout.addView(btn, params);
 
-
                 btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         String formName = btn.getTag().toString();
-
-                        Form form;
-
-                        form = databaseHelper.getFormBasedOnName(formName);
-
+                        Form form = databaseHelper.getFormBasedOnName(formName);
                         if (form.getName().equalsIgnoreCase(Constants.FAMILY_MEMBERS)) {
-
                             String familyMemnersKey = prefs.getString("no_family_members_id", null);
                             Log.i(TAG, "FAMILY MEMBERS KEY " + prefs.getString("no_family_members_id", "null"));
                             String familyMembers;
-
 
                             try {
                                 familyMembers = ALL_FARMER_ANSWERS_JSON.getString(familyMemnersKey);
@@ -404,53 +323,21 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                                 e.printStackTrace();
                                 familyMembers = "1";
                             }
-
-
-                               /* showAlertDialog(false, getResources(R.string.fill_data), getResources(R.string.enter_data_rationale) + farmer.getFarmerName() + getResources(R.string.before_proceed_suffux), new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                        dialog.dismiss();
-
-                                    }
-                                }, getResources(R.string.ok), null, "", 0);
-*/
-
-
-
-                                Log.i(TAG, "FAMILY MEMBERS KEY " + prefs.getString("no_family_members_id", "null"));
-
                                 if(familyMembers.equalsIgnoreCase("null")){
-                                    Log.i(TAG, "FAMILY MEMBERS OF FARMER NULL");
-
-                                    //Please fill out Socio-Economic data first
-
                                     showAlertDialog(false, getResources(R.string.fill_data), getResources(R.string.enter_data_rationale) + farmer.getFarmerName() + getResources(R.string.before_proceed_suffux), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-
                                             dialog.dismiss();
-
                                         }
                                     }, getResources(R.string.ok), null, "", 0);
-
                                 }else {
-
-                                    Intent intent = new Intent(FarmerDetailsActivity.this, FamilyMembersActivity_v2.class);
+                                    Intent intent = new Intent(FarmerDetailsActivity.this, FamilyMembersActivity.class);
                                     intent.putExtra("farmer", new Gson().toJson(farmer));
                                     intent.putExtra("familyMembers", familyMembers);
                                     intent.putExtra("type", form.getType());
-
                                     startActivity(intent);
-
-
                                 }
-
                         }else {
-
-
-                            Log.d(TAG, "BUTTON CLICKED WAS " + btn.getText().toString().toLowerCase());
-
                             Intent intent = new Intent(FarmerDetailsActivity.this, Add_EditFarmerDetailsActivity.class);
                             intent.putExtra("farmer", new Gson().toJson(farmer));
                             intent.putExtra("flag", "edit");
@@ -458,123 +345,70 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                             intent.putExtra("formLabel", form.getName());
                             startActivity(intent);
                             //finish();
-
-
                         }
-
                     }
                 });
-
             }
-
-
-
-
         }
-
 
         findViewById(R.id.pandl).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 if (!checkIfFarmSizeCorresponds(farmer.getId(), ALL_FARMER_ANSWERS_JSON)) {
-
                     showAlertDialog(true, getResources(R.string.no_access_to_pl), correspondingMessage, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-
                             dialogInterface.dismiss();
-
                         }
                     }, getResources(R.string.ok), null, "", 0);
-
-
                 } else if (!checkIfFarmProductionCorresponds(farmer.getId())) {
-
-
                     showAlertDialog(true, getResources(R.string.no_access_to_pl), "Farm production does not correspond with total plots production", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-
                             dialogInterface.dismiss();
-
                         }
                     }, getResources(R.string.ok), null, "", 0);
-
-
                 }else {
-
-
                     boolean shouldGoNext = true;
-
                     StringBuilder msg = new StringBuilder();
-
-
                     if (plots != null && plots.size() > 0) {
-
                         for (RealPlot plot : plots) {
-
                             if (plot.getRecommendationId() == null || plot.getRecommendationId().equals("") || plot.getRecommendationId().equals("null") || plot.getRecommendationId().equals("empty")) {
-
                                 msg.append(plot.getName());
-
                                 if (plots.size() > 1) {
-
                                     if (plot != plots.get(plots.size() - 1) && plot != plots.get(plots.size() - 2))
                                         msg.append(", ");
-
                                     if (plot == plots.get(plots.size() - 2))
                                         msg.append(getResources(R.string.and));
                                 }
                                 shouldGoNext = false;
                             }
-
                         }
-
-
                         if (shouldGoNext) {
 
                             Intent intent = new Intent(FarmerDetailsActivity.this, PandLActivity.class);
                             intent.putExtra("farmer", new Gson().toJson(farmer));
                             startActivity(intent);
-
                         } else {
                             message = getResources(R.string.enter_all_ao_data) + msg.toString();
-
                             showAlertDialog(true, getResources(R.string.missing_data), message, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-
                                     dialogInterface.dismiss();
-
                                 }
                             }, getResources(R.string.ok), null, "", 0);
-
                         }
                     } else {
-
                         showAlertDialog(true, getResources(R.string.no_plots), getResources(R.string.add_plot_to_access_pl), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
                                 dialogInterface.dismiss();
-
                             }
                         }, getResources(R.string.ok), null, "", 0);
-
-
                     }
-
-
                 }
             }
         });
-
-
-
-
-
 
         findViewById(R.id.farm_assessment).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -595,25 +429,13 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                         CustomToast.makeToast(FarmerDetailsActivity.this, "All validations complete. Now you can access Farm Assessment!", Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "AO M FOR ALL PLOTS? = true");
 
-                        for(int i = 0; i < plots.size(); i++) {
-
+                        for(int i = 0; i < plots.size(); i++)
                             PLOT_ASSESSMENTS.add(new PlotAssessment(plots.get(i).getName(), PLOT_ASSESSMENT_LIST.get(i)));
-                        }
-
-                        Log.d(TAG, "NO OF PLOTS IS " + plots.size());
-                        Log.d(TAG, "NO OF ASSESSMENTS FOR ALL PLOTS IS " + PLOT_ASSESSMENT_LIST.size());
-
-                        Log.d(TAG, "SIZE OF PLOT ASSESSMENT IS " + PLOT_ASSESSMENTS.size());
-
 
                         List<ComplexCalculation> complexCalculationList = databaseHelper.getAllComplexCalculation();
-
                         int i = 1;
                         for(ComplexCalculation cc : complexCalculationList) {
-
-
                             String formula = cc.getCondition();
-
                             JSONObject jsonObject;
                             try {
                                 jsonObject = new JSONObject(CURRENT_FARMER_MONITORING_JSON);
@@ -624,22 +446,14 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
 
                             }
 
-
                             if(formula.startsWith("IF(")) {
                                 Log.d(TAG, "FORMULA NO. " + i++ + ". " + formula);
-
-
                                 try {
                                     Log.i(TAG, "JSON STRING IS = " + CURRENT_FARMER_MONITORING_JSON);
-
-
                                     FARM_RESULTS.put(cc.getQuestionId(), parseIfFormula(formula.trim(), jsonObject));
                                 } catch (JSONException e) {
                                     e.printStackTrace();
-
                                 }
-
-
                             }else if(formula.startsWith("Collections.frequency(")){
 
                                 String parsedAAnswer = parseCollectionsFormula(formula.trim());
@@ -652,27 +466,15 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                                 }
 
                                 if(formula.contains("Non-Critical Fail")) {
-
-                                    Log.i(TAG, " ^^^^^^^^^^  FOUND NON CRITICAL FAIL PERCENT ^^^^^^^^^^^^");
-
                                     String percentagePlotsId = databaseHelper.getQuestionIdByTranslationName("Percentage non critical");
-
                                     double noNonCriticalFail = Double.parseDouble(parsedAAnswer);
                                     String dispose = String.valueOf(noNonCriticalFail/plots.size());
-
-                                    Log.i(TAG, "% NON CRITICAL FAIL = " + dispose);
-
-
                                     try {
                                         FARM_RESULTS.put(percentagePlotsId, dispose);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
-
                                     }
                                 }
-
-
-
                             }else{
                                 try {
                                     FARM_RESULTS.put(cc.getQuestionId(), "0");
@@ -682,32 +484,19 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                                 }
                             }
                         }
-
-
-
-
-
-
-                        Log.i(TAG, "FARMER RESULTS IS " + FARM_RESULTS.toString());
                         Logic thisLogic = null;
 
                         String farmResultId = databaseHelper.getQuestionIdByTranslationName("Farm result");
                         List<Logic>  logicList = databaseHelper.getLogics(farmResultId);
 
                         Log.i(TAG, "LOGIC SIZE FOR FARMER RESULTS IS " + logicList.size());
-
-
                         for(Logic l : logicList){
-
                             Boolean booleanValue = getLogicValue(l);
-
                             if(booleanValue != null && booleanValue) {
                                 thisLogic = l;
                                 break;
                             }
                         }
-
-
                         FarmResult farmResult = new FarmResult();
                         farmResult.setCaption(getResources(R.string.farm_result));
 
@@ -715,19 +504,14 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                         farmResult.setStatus(thisLogic.getResult());
                         farmResult.setPlotAssessmentList(PLOT_ASSESSMENTS);
 
-                        Log.d(TAG, "***** FARM RESULTS = " + farmResult.getStatus());
+                        prefs.edit().putString(farmer.getCode() + "_farm_results", farmResult.getStatus()).apply();
 
-
+                        //Save the farm results data
                         Intent intent = new Intent(FarmerDetailsActivity.this, FarmAssessmentActivity.class);
                         intent.putExtra("farmResults", new Gson().toJson(farmResult));
                         intent.putExtra("farmer", new Gson().toJson(farmer));
 
                         startActivity(intent);
-
-
-
-
-
 
                     }else{
                         Log.d(TAG, "AO M FOR ALL PLOTS? = false");
@@ -742,23 +526,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
                         }, getResources(R.string.ok), null, "", 0);
 
                     }
-             /*   }else{
-                    Log.d(TAG, "SAME NUMBER OF MONITORING? = false");
-
-
-
-                    showAlertDialog(true, getResources(R.string.different_no_monitoring), message, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                            dialogInterface.dismiss();
-
-                        }
-                    }, getResources(R.string.ok), null, "", 0);
-
-
-                }*/
-
             }
         });
 
@@ -766,8 +533,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
 
             addPlot.setVisibility(View.GONE);
             findViewById(R.id.sync_farmer).setVisibility(View.GONE);
-
-
         }
 
 
@@ -956,23 +721,11 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
             }else {
 
                 if(noOfPlotMonitorings.contains(0))
-                {
                     message = getResources(R.string.farmer)+ farmer.getFarmerName() + getResources(R.string.no_monitoring_added) + monitoringYear + getResources(R.string.please_add_monitoring_suffix);
-
-                    // return false;
-
-                }else {
-                    // return true;
-                }
-
             }
 
-        }else{
+        }else
             message = getResources(R.string.farmer) + farmer.getFarmerName() + getResources(R.string.no_plots_added_suffix);
-            //return false;
-
-        }
-
     }
 
 
@@ -987,7 +740,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
         String plotAssessmentID = databaseHelper.getQuestionIdByTranslationName("Plot Assessment");
 
         for (RealPlot plot : plots) {
-
             MONITORING_LIST = databaseHelper.getAllPlotMonitoringForYear(plot.getId(), String.valueOf(monitoringYear));
 
             if(prefs.getString("monitoringToUse", "Last").equalsIgnoreCase("last")){
@@ -1068,12 +820,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
     }
 
 
-
-
-
-
-
-
     String parseCollectionsFormula(String formula){
         int value = -1;
 
@@ -1089,9 +835,6 @@ public class FarmerDetailsActivity extends BaseActivity implements Callbacks.Net
         Log.i(TAG, formula + " IS " + value);
 
         return String.valueOf(value);
-
-
-
 
     }
 

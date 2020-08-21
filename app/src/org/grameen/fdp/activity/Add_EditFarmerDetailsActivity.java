@@ -1,7 +1,6 @@
 package org.grameen.fdp.activity;
 
 import android.Manifest;
-import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,7 +27,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.jaredrummler.materialspinner.MaterialSpinner;
-import com.squareup.picasso.Picasso;
 
 import org.grameen.fdp.R;
 import org.grameen.fdp.fragment.MyFormFragment;
@@ -107,11 +104,8 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
 
             if (!ROOT.exists())
                 if (ROOT.mkdirs()) {
-
                     Log.i(TAG, "ROOT dir file created!  " + ROOT);
-
                 }
-
 
             File thumbnailsDir = new File(ROOT + File.separator + ".thumbnails");
             if (!thumbnailsDir.exists())
@@ -137,21 +131,6 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
             e.printStackTrace();
         }
     }
-
-
-
-
-   /* @Override
-    protected void onStop() {
-
-        Log.i(TAG, "ON STOP");
-
-        saveOrUpdateData(false);
-        super.onStop();
-
-
-
-    }*/
 
     public static String generateThumbnail(String path, String destinationName) {
         File file = new File(path);
@@ -217,24 +196,18 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
     public static String saveImage(Bitmap imageBitmap, String destinationName) {
 
         OutputStream fOut = null;
-
         File dir = new File(ROOT_DIR + File.separator + "Farmer Images");
         if (!dir.exists()) Log.i(TAG, "Is DIR created?  " + dir.mkdirs());
         Log.i(TAG, "Destination path is " + dir);
 
         File save_image = new File(dir, destinationName + ".jpg");
-
         try {
             fOut = new FileOutputStream(save_image);
             imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
-
             Log.i(TAG, "Saving edited screenshot with name" + save_image);
-
             return save_image.getAbsolutePath();
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-
             return "null";
         } finally {
             // Not really required
@@ -244,43 +217,29 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
                     fOut.flush();
                     fOut.close();
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-
-
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         createNoMediaFile();
-
         Intent intent = getIntent();
         setContentView(R.layout.activity_edit_farmer_details);
-
-
-
-
         fm = getSupportFragmentManager();
-
 
         TextView farmer_name_text = findViewById(R.id.farmer_name_text);
         Question temp = databaseHelper.getQuestionByTranslation("Farmer Name");
         if(temp != null)
             farmer_name_text.setText((prefs.getBoolean("toggleTranslation", false)) ? temp.getTranslation__c() : temp.getCaption__c());
 
-
         TextView farmer_code_text = findViewById(R.id.farmer_code_text);
         temp = databaseHelper.getQuestionByTranslation("Farmer Code");
         if(temp != null)
             farmer_code_text.setText((prefs.getBoolean("toggleTranslation", false)) ? temp.getTranslation__c() : temp.getCaption__c());
-
-
 
         TextView village_text = findViewById(R.id.village_text);
         temp = databaseHelper.getQuestionByTranslation("Village");
@@ -303,12 +262,6 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
         genderQuestion = databaseHelper.getQuestionByTranslation("Gender");
         if (genderQuestion != null)
             gender_text.setText((prefs.getBoolean("toggleTranslation", false)) ? genderQuestion.getTranslation__c() : genderQuestion.getCaption__c());
-
-
-
-
-
-
 
         cancel = (Button) findViewById(R.id.back);
         save = (Button) findViewById(R.id.save);
@@ -931,41 +884,24 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
             // CustomToast.makeToast(this, permission[0], Toast.LENGTH_SHORT).show();
 
             if (requestCode == PERMISSION_CAMERA) {
-
                 startCameraIntent();
-
             }
 
         } else {
-
             showAlertDialog(true, getResources(R.string.permission_required), getResources(R.string.camera_permission_rationale) , new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-
                     dialogInterface.dismiss();
                     startCameraIntent();
-
                 }
             }, getResources(R.string.ok), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-
                     dialogInterface.dismiss();
-
                 }
             }, getResources(R.string.no), 0);
         }
     }
-
-    private int getRandomNumber() {
-
-
-        Random r = new Random(System.currentTimeMillis());
-        return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
-
-
-    }
-
 
     protected String getSaltString() {
         String UUID = prefs.getString(Constants.USER_UID, "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
@@ -995,13 +931,11 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
     }
 
     void loadNextForm(){
-
         if (IS_MONITIRING_MODE)
             FORMS = databaseHelper.getAllMonitoringForms();
 
         if(SELECTED_FORM_INDEX < FORMS.size()) {
             for (int i = 0; i < FORMS.size(); i++) {
-
                 if (FORMS.get(i).getName().equalsIgnoreCase(formLabel)) {
                     SELECTED_FORM_INDEX += 1;
                     break;
@@ -1010,7 +944,6 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
 
 
             if (SELECTED_FORM_INDEX == FORMS.size()) {
-
                 SELECTED_FORM_INDEX = 0;
 
                 Intent intent = new Intent(Add_EditFarmerDetailsActivity.this, FarmerDetailsActivity.class);
@@ -1066,7 +999,7 @@ public class Add_EditFarmerDetailsActivity extends BaseActivity{
 
                     } else {
 
-                        Intent intent = new Intent(this, FamilyMembersActivity_v2.class);
+                        Intent intent = new Intent(this, FamilyMembersActivity.class);
                         intent.putExtra("farmer", new Gson().toJson(farmer));
                         intent.putExtra("familyMembers", familyMembers);
                         startActivity(intent);

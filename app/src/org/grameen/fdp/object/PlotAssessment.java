@@ -6,6 +6,7 @@ package org.grameen.fdp.object;
 
 public class PlotAssessment {
 
+    String plotId;
     String plotName;
     String results;
     int color;

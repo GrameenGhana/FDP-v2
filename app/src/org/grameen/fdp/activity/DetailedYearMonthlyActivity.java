@@ -153,7 +153,17 @@ public class DetailedYearMonthlyActivity extends BaseActivity {
                     }
 
                 } else {
-                    getActivitiesSuppliesAndCosts(recommendationId, plot.getName(), Math.min(year + Math.abs(plotYear), 7));
+
+                    if (year + Math.abs(plotYear) > 7) {
+
+                        getActivitiesSuppliesAndCosts(recommendationId, plot.getName(), 7);
+
+                    } else {
+
+                        getActivitiesSuppliesAndCosts(recommendationId, plot.getName(), year + Math.abs(plotYear));
+                    }
+
+
                 }
             }
 
@@ -201,23 +211,54 @@ public class DetailedYearMonthlyActivity extends BaseActivity {
                                 findViewById(R.id.bottom_buttons).setVisibility(View.VISIBLE);
                                 findViewById(R.id.currency_layout).setVisibility(View.VISIBLE);
                                 findViewById(R.id.print).setVisibility(View.VISIBLE);
+
+
                             } else {
                                 CustomToast.makeToast(DetailedYearMonthlyActivity.this, "Error starting the printer service!", Toast.LENGTH_LONG).show();
                             }
+
+
                         }
                     }, 2000);
+
                 }
             });
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
     HistoricalTableViewData getMonthlyData(String id, String month, int year) {
-        List<RecommendationsPlusActivity> recommendationsPlusActivities;
-        List<RecommendationsPlusActivity> recommendationsPlusActivities2;
+
+        List<RecommendationsPlusActivity> recommendationsPlusActivities = new ArrayList<>();
+        List<RecommendationsPlusActivity> recommendationsPlusActivities2 = new ArrayList<>();
 
         HistoricalTableViewData data = new HistoricalTableViewData("", "", "");
         try {
+
+           /*
+
+           if(DID_LABOUR)
+                if(LABOUR_TYPE.equalsIgnoreCase("seasonal"))
+                    recommendationsPlusActivities = databaseHelper.getSeasonalRecommendationPlusAcivityByRecommendationIdMonthAndYear(id, month, year + "", "true");
+                else
+                    recommendationsPlusActivities = databaseHelper.getRecommendationPlusAcivityByRecommendationIdMonthAndYear(id, month, year + "");
+                else
+
+           */
+
             recommendationsPlusActivities = databaseHelper.getRecommendationPlusAcivityByRecommendationIdMonthAndYear(id, month, year + "");
 
             recommendationsPlusActivities2 = databaseHelper.getSeasonalRecommendationPlusAcivityByRecommendationIdMonthAndYear(id, month, year + "", "true");
@@ -233,11 +274,15 @@ public class DetailedYearMonthlyActivity extends BaseActivity {
                 RecommendationsPlusActivity ra = recommendationsPlusActivities.get(i);
 
                 try {
+
                         if(ra.getActivityName() != null && !ra.getActivityName().equals("null"))
                             if (!activities.toString().toLowerCase().contains(ra.getActivityName().toLowerCase()))
                                 activities.append(toCamelCase(ra.getActivityName())).append(", ");
+
                         suppliesCost.append(ra.getSuppliesCost()).append("+");
+
                     try {
+
                         if (DID_LABOUR)
                             if (LABOUR_TYPE.equalsIgnoreCase("seasonal"))
                                 labourCost.append(recommendationsPlusActivities2.get(i).getLaborCost()).append("+");
@@ -249,6 +294,7 @@ public class DetailedYearMonthlyActivity extends BaseActivity {
                     } catch (Exception ignored) {
                         labourCost.append("0").append("+");
                     }
+
                 } catch (Exception ignored) {
                     ignored.printStackTrace();
                 }

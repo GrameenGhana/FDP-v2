@@ -50,9 +50,6 @@ public class Constants {
     public static final int SYNC_STATUS_COMPLETE = 0;
     public static final int SYNC_STATUS_PARTIAL_SYNC = 1;
     public static final int SYNC_STATUS_NO_SYNC = -1;
-
-
-
     public static final String ID = "Id";
 
     public static final String NULL_STRING = "null";
@@ -86,20 +83,12 @@ public class Constants {
     public static final String FAMILY_MEMBERS = "family members";
     public static final String PLOT_RESULTS = "plot results";
     public static final String PLOT_INFORMATION = "plot information";
-
     public static final String AO_MONITORING = "ao monitoring";
     public static final String AO_MONITORING_RESULT = "ao monitoring result";
     public static final String MONITORING_PLOT_INFORMATION = "monitoring plot information";
-
     public static final String COMPETENCE_MONITORING = "competence monitoring";
     public static final String FAILURE_MONITORING = "failure monitoring";
-
     public static final String FDP_STATUS = "fdp status";
-
-
-
-
-
     public static final String DIAGNOSTIC = " register";
     public static final String MONITORING = "monitoring";
     public static final int PLACE_PICKER_REQUEST = 101;
@@ -127,7 +116,7 @@ public class Constants {
     public static int SYNC_OK = 1;
     public static int SYNC_NOT_OK = 0;
 
-    public static final String NO_MONITORING_PLACE_HOLDER = "N/A - Please complete monitoring A0";
+    public static final String NO_MONITORING_PLACE_HOLDER = "Please_fill_out_all_AO_Monitoring_data";
 
 
 }

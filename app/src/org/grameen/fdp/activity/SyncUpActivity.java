@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
@@ -41,6 +42,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -76,38 +78,28 @@ public class SyncUpActivity extends SalesforceActivity {
     int SYNC_STATUS = Constants.SYNC_STATUS_NO_SYNC;
     String message = "";
     String title = "";
-
-
     String SUBMISSION_ID;
-
     String USER_ID;
     RestClient restClient = null;
     ProgressDialog progressDialog;
     String TAG = "DataDownloadActivity";
-
     DatabaseHelper databaseHelper;
     long start = 0;
-
     String ISO_CODE = "";
     Context context;
-
     Boolean syncInitialData;
     String API_VERSION;
-
     Boolean exception = false;
-    int totalSize = 0;
-    int batchSize = 0;
-
-
+    Question farmResultsQuestion;
     List<Object> ALL_FARMER_LIST = new ArrayList<>();
     List<Object> ALL_FARMERS_PLOT_LIST = new ArrayList<>();
     List<Object> ALL_FARMER_ANSWERS = new ArrayList<>();
     List<Object> ALL_PLOT_ANSWERS = new ArrayList<>();
-
     List<Object> ALL_MONITORING_LIST = new ArrayList<>();
     List<Object> ALL_MONITORING_ANSWERS_LIST = new ArrayList<>();
 
     private RealFarmer FARMER;
+    SharedPreferences preferences;
 
     public static Callbacks.NetworkActivityCompleteListener networkActivityCompleteListener;
 
@@ -130,6 +122,10 @@ public class SyncUpActivity extends SalesforceActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         databaseHelper = DatabaseHelper.getInstance(this);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        farmResultsQuestion = databaseHelper.getQuestionByTranslation("Farm result");
+
+        Log.i(TAG, "Farm result question " + new Gson().toJson(farmResultsQuestion));
 
         syncInitialData = getIntent().getBooleanExtra("initialData", false);
         SUBMIT_AGREEMENT = getIntent().getBooleanExtra("submitAgreement", false);
@@ -471,10 +467,8 @@ public class SyncUpActivity extends SalesforceActivity {
 
 
     private void prepareDataForSIngleFarmer(RealFarmer realFarmer) {
-
         Date date = DateUtil.formatDateMMDDYYYY();
         String placeHolderQuestionId = databaseHelper.getQuestionIdByTranslationName("Place holder question");
-
 
         Farmer farmer = new Farmer();
         farmer.setSubmission__c(SUBMISSION_ID);
@@ -493,25 +487,21 @@ public class SyncUpActivity extends SalesforceActivity {
         farmer.setSubmitAgreement__c(realFarmer.getHasSubmitted());
 
         ALL_FARMER_LIST.add(farmer);
-
         JSONObject farmerAnswersJsonObject;
-
         try {
             farmerAnswersJsonObject = new JSONObject(realFarmer.getAnswersJson());
+            //Add farm results answer
+            if(farmerAnswersJsonObject.has(farmResultsQuestion.getId()))
+            farmerAnswersJsonObject.remove(farmResultsQuestion.getId());
+            farmerAnswersJsonObject.put(farmResultsQuestion.getId(), preferences.getString(realFarmer.getCode() + "_farm_results", "N/A"));
         } catch (JSONException e) {
             e.printStackTrace();
             farmerAnswersJsonObject = new JSONObject();
         }
 
-
         Iterator i1 = farmerAnswersJsonObject.keys();
-
-
         while (i1.hasNext()) {
-
-
             String tmp_key = (String) i1.next();
-
             Answer farmerAnswer = new Answer();
             try {
                 farmerAnswer.setAnswer__c(farmerAnswersJsonObject.getString(tmp_key));
@@ -524,11 +514,8 @@ public class SyncUpActivity extends SalesforceActivity {
             farmerAnswer.setExternal_id__c(realFarmer.getId());
             farmerAnswer.setFarmer_ID__c(realFarmer.getCode());
             farmerAnswer.setQuestion__c(tmp_key);
-
             ALL_FARMER_ANSWERS.add(farmerAnswer);
-
         }
-
 
         List<RealPlot> realPlots = databaseHelper.getAllFarmerPlots(realFarmer.getId());
 
@@ -703,18 +690,9 @@ public class SyncUpActivity extends SalesforceActivity {
 
 
         sendDataOneAtATime(realFarmer);
-
-
     }
 
 
-
-    @Override
-    public void onResume() {
-
-        super.onResume();
-
-    }
 
 
     private void sendRequest(RestRequest request, RestClient.AsyncRequestCallback asyncRequestCallback) {
@@ -754,270 +732,6 @@ public class SyncUpActivity extends SalesforceActivity {
 
     }
 
-
-
-   /* void syncAllData(){
-
-
-        if(Utils.checkInternetConnection(context)) {
-
-            if (UN_SYNCED_FARMERS != null && UN_SYNCED_FARMERS.size() > 0) {
-
-                progressDialog = BaseActivity.showProgress(context, getResources(R.string.sending_data), getResources(R.string.please_wait), false);
-
-
-                Thread thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-
-
-                        sendFarmerDataToServer();
-
-
-                    }
-                });
-
-                thread.start();
-            } else {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AppDialog);
-                builder.setTitle(getResources(R.string.no_new_data));
-                builder.setCancelable(true);
-                builder.setMessage(getResources(R.string.no_farmers));
-                builder.setPositiveButton(getResources(R.string.ok), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                        finish();
-
-                    }
-                });
-                builder.show();
-
-
-            }
-        }else{
-
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AppDialog);
-            builder.setTitle(getResources(R.string.network_error));
-            builder.setCancelable(true);
-            builder.setMessage(getResources(R.string.network_error_rational));
-            builder.setPositiveButton(getResources(R.string.retry), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                    startActivity(new Intent(SyncUpActivity.this, SyncUpActivity.class));
-                    finish();
-
-                }
-            });
-
-            builder.setNegativeButton(getResources(R.string.ok), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                    finish();
-
-                }
-            });
-
-            builder.show();
-
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-    }*/
-
-
- /*   void sendFarmerDataToServer2(){
-
-
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-
-                progressDialog.setMessage("Preparing sync data!");
-
-
-            }
-        });
-
-
-
-        if(SUBMISSION_ID == null) {
-
-            Submission submission = new Submission();
-            submission.setStart__c(DateUtil.formatDateMMDDYYYYhhmma());
-            submission.setEnd__c(DateUtil.formatDateMMDDYYYYhhmma());
-            submission.setExternal_id__c(String.valueOf(System.currentTimeMillis()));
-            submission.setSurveyor__c(USER_ID);
-
-
-            RestRequest createSubmissionRequest = null;
-            try {
-                createSubmissionRequest = RestRequest.getRequestForCreate(API_VERSION, "fpd_Submission__c", parseObject(submission));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            RestResponse response;
-            JSONObject responseJson;
-            try {
-                response = restClient.sendSync(createSubmissionRequest);
-                Log.i(TAG, "RESPONSE CODE = " + response.getStatusCode());
-                try {
-
-                    responseJson = response.asJSONObject();
-                    Log.i(TAG, "RESPONSE BODY = " + responseJson);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    responseJson = new JSONObject();
-                }
-
-                if (response.isSuccess()) {
-
-                    try {
-                        SUBMISSION_ID = responseJson.getString("id");
-
-                        prepareData();
-
-
-                        System.out.println("******************************");
-                        System.out.println();
-                        System.out.println();
-
-                        Log.i(TAG, "ALL FARMERS LIST SIZE IS " + ALL_FARMER_LIST.size());
-                        Log.i(TAG, "ALL FARMERS ANSWERS LIST SIZE IS " + ALL_FARMER_ANSWERS.size());
-
-                        Log.i(TAG, "ALL PLOTS LIST SIZE IS " + ALL_FARMERS_PLOT_LIST.size());
-                        Log.i(TAG, "ALL PLOT ANSWERS LIST SIZE IS " + ALL_PLOT_ANSWERS.size());
-
-                        Log.i(TAG, "ALL MONITORING LIST SIZE IS " + ALL_MONITORING_LIST.size());
-                        Log.i(TAG, "ALL MONITORING ANSWER LIST SIZE IS " + ALL_MONITORING_ANSWERS_LIST.size());
-
-
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("******************************");
-
-
-
-
-                        sendDataInBatches();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        SUBMISSION_ID = null;
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AppDialog);
-                        builder.setTitle("Error reaching server");
-                        builder.setCancelable(true);
-                        builder.setMessage("An error has occurred. Retry?");
-                        builder.setPositiveButton(getResources(R.string.retry), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                                syncAllData();
-
-                            }
-                        });
-
-                        builder.setNegativeButton(getResources(R.string.cancel), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                                finish();
-
-                            }
-                        });
-
-                        builder.show();
-
-                    }
-
-                } else {
-
-
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AppDialog);
-                    builder.setTitle("Error reaching server");
-                    builder.setCancelable(true);
-                    builder.setMessage("An error has occurred. Retry?");
-                    builder.setPositiveButton(getResources(R.string.retry), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                            syncAllData();
-
-                        }
-                    });
-
-                    builder.setNegativeButton(getResources(R.string.cancel), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                            finish();
-
-                        }
-                    });
-
-                    builder.show();
-
-
-
-                }
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.i(TAG, "RESPONSE BODY is NULL");
-
-                progressDialog.dismiss();
-                CustomToast.makeToast(context, "Please try again", Toast.LENGTH_LONG).show();
-
-            }
-        }else {
-
-
-            System.out.println("******************************");
-            System.out.println();
-            System.out.println();
-
-            Log.i(TAG, "ALL FARMERS LIST SIZE IS " + ALL_FARMER_LIST.size());
-            Log.i(TAG, "ALL FARMERS ANSWERS LIST SIZE IS " + ALL_FARMER_ANSWERS.size());
-
-            Log.i(TAG, "ALL PLOTS LIST SIZE IS " + ALL_FARMERS_PLOT_LIST.size());
-            Log.i(TAG, "ALL PLOT ANSWERS LIST SIZE IS " + ALL_PLOT_ANSWERS.size());
-
-            Log.i(TAG, "ALL MONITORING LIST SIZE IS " + ALL_MONITORING_LIST.size());
-            Log.i(TAG, "ALL MONITORING ANSWER LIST SIZE IS " + ALL_MONITORING_ANSWERS_LIST.size());
-
-
-            System.out.println();
-            System.out.println();
-            System.out.println("******************************");
-
-
-            sendDataInBatches();
-        }
-
-
-
-
-
-    }
-*/
 
     void sendFarmerDataToServer() {
 
@@ -1654,114 +1368,11 @@ public class SyncUpActivity extends SalesforceActivity {
 
 
 
-/*
-    void showSyncCompleteDialog(final Context context){
-        COUNT = 0;
-        RETRY_COUNT = 0;
-        BEGIN_INDEX = 0;
-
-
-        if(FARMER == null) {
-
-            title = getResources(R.string.sync_in_complete);
-            message = "Error syncing data! Please retry.";
-
-
-            UN_SYNCED_FARMERS = databaseHelper.getAllUnsyncedFarmers();
-
-            if (UN_SYNCED_FARMERS != null)
-                if (UN_SYNCED_FARMERS.size() > 0) {
-                    SYNC_STATUS = Constants.SYNC_STATUS_PARTIAL_SYNC;
-
-                    title = getResources(R.string.sync_in_complete);
-                    message = "Some data did not sync. Please click on retry to sync remaining data.";
-
-                } else if (UN_SYNCED_FARMERS.size() == 0) {
-                    databaseHelper.setAllFarmersAsSynced();
-
-                    SYNC_STATUS = Constants.SYNC_STATUS_COMPLETE;
-
-                    title = getResources(R.string.sync_complete);
-                    message = getResources(R.string.all_data_synced);
-                    PreferenceManager.getDefaultSharedPreferences(context).edit().putString("lastSync", DateUtil.getFormattedDateMMDDYYYYhhmmaa()).apply();
-                }
-
-
-
-        }else{
-
-            databaseHelper.setFarmerAsSynced(FARMER.getId());
-            message = getResources(R.string.all_data_synced);
-            PreferenceManager.getDefaultSharedPreferences(context).edit().putString("lastSync", DateUtil.getFormattedDateMMDDYYYYhhmmaa()).apply();
-
-
-            if(SUBMIT_AGREEMENT) {
-                message = getResources(R.string.agreement_submitted_and_data_synced);
-                databaseHelper.setAgreementSubmitted(FARMER.getId());
-
-                PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("refreshMainActivity", true).apply();
-
-
-            }
-
-        }
-
-        runOnUiThread(new Runnable() {
-
-
-
-            @Override
-            public void run() {
-
-
-                if (progressDialog != null)
-                    progressDialog.dismiss();
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AppDialog);
-                builder.setTitle(title);
-                builder.setCancelable(true);
-                builder.setMessage(message);
-                builder.setPositiveButton(getResources(R.string.ok), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                        PreferenceManager.getDefaultSharedPreferences(context).edit().putString("lastSync", DateUtil.getFormattedDateMMDDYYYYhhmmaa()).apply();
-
-                        if(networkActivityCompleteListener != null)
-                            networkActivityCompleteListener.taskComplete(SYNC_STATUS);
-
-                        finish();
-
-                    }
-                });
-
-                if(FARMER == null)
-                if(SYNC_STATUS == Constants.SYNC_STATUS_NO_SYNC || SYNC_STATUS == Constants.SYNC_STATUS_PARTIAL_SYNC)
-                    builder.setNeutralButton(getResources(R.string.retry), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-
-                            sendDataInBatches();
-
-                        }
-                    });
-
-                builder.show();
-
-            }
-
-
-        });
-
-    }
-*/
-
-
     void showSyncCompleteDialog(final Context context) {
         COUNT = 0;
         RETRY_COUNT = 0;
         BEGIN_INDEX = 0;
+
 
 
         message = getResources(R.string.all_data_synced);
@@ -1827,6 +1438,8 @@ public class SyncUpActivity extends SalesforceActivity {
 
 
     }
+
+
 
 
 }

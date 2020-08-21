@@ -1,39 +1,25 @@
 package org.grameen.fdp.viewholder;
 
-import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.grameen.fdp.R;
-import org.grameen.fdp.activity.FamilyMembersActivity_v2;
+import org.grameen.fdp.activity.FamilyMembersActivity;
 import org.grameen.fdp.object.Question;
 import org.grameen.fdp.utility.Callbacks;
-import org.grameen.fdp.utility.Constants;
 
 import java.util.List;
-
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
  * Created by aangjnr on 22/02/2018.
@@ -95,7 +81,7 @@ public class SpinnerViewHolder extends AbstractViewHolder {
 
 
     void bindSpinnerView(final Spinner spinner, final Question q, final int rowPosition){
-        final String defaultValue = FamilyMembersActivity_v2.getValue(rowPosition, q.getId());
+        final String defaultValue = FamilyMembersActivity.getValue(rowPosition, q.getId());
 
 
        /* if(updateJsonArrayListener != null)

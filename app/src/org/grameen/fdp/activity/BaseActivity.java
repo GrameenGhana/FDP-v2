@@ -1649,12 +1649,16 @@ public class BaseActivity extends AppCompatActivity {
 
 
     public String toCamelCase(String value) {
+
         if (value == null || value.equals("null")) return "";
         else {
+
             if (Character.isUpperCase(value.codePointAt(0)))
                 return value;
+
             else
                 return (value.substring(0, 1).toUpperCase() + value.substring(1, value.length()).toLowerCase());
+
         }
     }
 
@@ -1736,6 +1740,13 @@ public class BaseActivity extends AppCompatActivity {
 
                 return false;
             }
+
+      /*  } else {
+            CustomToast.makeToast(this, getResources(R.string.error_invalid_units), Toast.LENGTH_LONG).show();
+            return false;
+        }*/
+
+
     }
 
     public boolean checkIfFarmSizeCorresponds(String farmerCode, JSONObject ALL_FARMER_ANSWERS_JSON) {

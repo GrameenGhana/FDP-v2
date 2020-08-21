@@ -29,13 +29,11 @@ public class CustomToast extends Toast {
         LayoutInflater inflater = LayoutInflater.from(c);
         View layout = inflater.inflate(R.layout.custom_toast, null, false);
         // set a message
-        TextView text = (TextView) layout.findViewById(R.id.toast_text);
+        TextView text =  layout.findViewById(R.id.toast_text);
         text.setText(message);
         // Toast...
         toast = new Toast(c);
-        toast.setGravity(Gravity.CENTER_HORIZONTAL, 0,
-                (int) (Utils.getScreenHeight(c) / 3));
-
+        toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, (Utils.getScreenHeight(c) / 3));
         toast.setDuration(duration);
         toast.setView(layout);
 

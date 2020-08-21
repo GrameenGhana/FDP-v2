@@ -88,6 +88,9 @@ public class FarmAssessmentActivity extends BaseActivity {
             tableView.setDataAdapter(new FarmAssessmentTableViewAdapter(FarmAssessmentActivity.this, dataList, tableView));
 
 
+
+
+
         }
 
 

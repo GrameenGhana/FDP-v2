@@ -7,8 +7,6 @@ import com.google.gson.annotations.Expose;
  */
 
 public class Farmer {
-
-
     String submitAgreement__c;
     String External_id__c;
     String fullName__c;

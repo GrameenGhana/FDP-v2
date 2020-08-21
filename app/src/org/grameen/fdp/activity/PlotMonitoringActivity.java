@@ -57,7 +57,7 @@ public class PlotMonitoringActivity extends BaseActivity {
     TextView plotName;
     List<Question> AO_QUESTIONS;
     List<Question> MONITORING_AO_QUESTIONS;
-     List<PlotMonitoringTableData> plotMonitoringTableDataList;
+    List<PlotMonitoringTableData> plotMonitoringTableDataList;
 
     JSONObject AO_JSON_OBJECT;
     PlotMonitoringTablePagerAdapter plotMonitoringTablePagerAdapter;
@@ -66,7 +66,6 @@ public class PlotMonitoringActivity extends BaseActivity {
 
 
 
-    JSONArray jsonArray = null;
 
     RealPlot PLOT;
     Integer selectedYear;
@@ -152,8 +151,6 @@ public class PlotMonitoringActivity extends BaseActivity {
                     @Override
                     public void onClick(View v) {
                         //Todo go to add new monitoring
-
-
                         Intent intent = new Intent(PlotMonitoringActivity.this, AddNewPlotMonitoringActivity.class);
                         intent.putExtra("isNewMonitoring", true);
                         intent.putExtra("plot", new Gson().toJson(PLOT));
@@ -169,7 +166,6 @@ public class PlotMonitoringActivity extends BaseActivity {
                 editMonitoring.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
 
                         Intent intent = new Intent(PlotMonitoringActivity.this, AddNewPlotMonitoringActivity.class);
                         intent.putExtra("isNewMonitoring", false);
@@ -195,9 +191,6 @@ public class PlotMonitoringActivity extends BaseActivity {
                     @Override
                     public void onClick(View v) {
 
-
-
-
                         showAlertDialog(true, getResources(R.string.incomplete_ao_monitoring), getResources(R.string.incomplete_ao_rational) + PLOT.getName(), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -216,8 +209,6 @@ public class PlotMonitoringActivity extends BaseActivity {
             findViewById(R.id.sync).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-
                     if (farmer.getSyncStatus() != Constants.SYNC_OK) {
 
                         Intent intent = new Intent(PlotMonitoringActivity.this, SyncUpActivity.class);
@@ -245,9 +236,6 @@ public class PlotMonitoringActivity extends BaseActivity {
     void setGeneralAOTableViewData(){
 
         String[] GAPS_PLOT_RECOMMENDATION_IDS = PLOT.getRecommendationId().split(",");
-
-
-
         Recommendation GAPS_RECOMENDATION_FOR_START_YEAR = databaseHelper.getRecommendation(GAPS_PLOT_RECOMMENDATION_IDS[0]);
         Recommendation PLOT_RECOMMENDATION = databaseHelper.getRecommendation(GAPS_PLOT_RECOMMENDATION_IDS[1]);
 
@@ -302,10 +290,6 @@ public class PlotMonitoringActivity extends BaseActivity {
 
     }
 
-
-
-
-
     String getValue(String id, JSONObject jsonObject) {
 
         String defVal = "--";
@@ -325,9 +309,6 @@ public class PlotMonitoringActivity extends BaseActivity {
     @Override
     public void onResume() {
         super.onResume();
-
-
-
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -422,7 +403,6 @@ public class PlotMonitoringActivity extends BaseActivity {
         monitoringList = databaseHelper.getAllPlotMonitoringForYear(PLOT.getId(), String.valueOf(selectedYear));
 
         for(Monitoring monitoring : monitoringList) {
-
             List<HistoricalTableViewData> historicalTableViewDataList = new ArrayList<>();
 
             JSONObject jsonObject;
@@ -438,7 +418,6 @@ public class PlotMonitoringActivity extends BaseActivity {
 
                 if (q.getRelated_Questions__c() != null) {
                     String[] ids = q.getRelated_Questions__c().split(",");
-
 
                     //Todo get results
                     historicalTableViewDataList.add(new HistoricalTableViewData("", getValue(q.getId(), jsonObject), getValue(databaseHelper.getQuestionId(ids[0]), jsonObject), getValue(databaseHelper.getQuestionId(ids[1]), jsonObject), null));

@@ -12,21 +12,15 @@ public class Callbacks {
 
     }
 
-
-
     public interface UpdateJsonArray {
 
         void onItemValueChanged(int id, String uid, String value);
 
     }
 
-
     public interface NetworkActivityCompleteListener {
 
         void taskComplete(int response);
 
     }
-
-
-
 }

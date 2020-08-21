@@ -35,8 +35,6 @@ import de.codecrafters.tableview.TableView;
  */
 
 public class PlotsReviewActivity extends BaseActivity {
-
-
     Boolean hasFamilyMembersData = false;
     RealFarmer farmer;
     TextView farmerName;
@@ -99,6 +97,9 @@ public class PlotsReviewActivity extends BaseActivity {
 
 
             PLOTS_LIST = databaseHelper.getAllFarmerPlots(farmer.getId());
+
+
+
             setUpViewPager();
 
 

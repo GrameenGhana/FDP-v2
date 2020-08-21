@@ -42,8 +42,8 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
 
     private static final int TEXT_SIZE = 11;
     private static final int TITLE_TEXT_SIZE = 14;
-    static MaterialSpinner.OnItemSelectedListener itemSelectedListener;
-    static View.OnClickListener mOnClickListener;
+    private static MaterialSpinner.OnItemSelectedListener itemSelectedListener;
+    private static View.OnClickListener mOnClickListener;
 
     Context context;
    // String[] YEARS = {"YEAR 1", "YEAR 2", "YEAR 3", "YEAR 4", "YEAR 5"};
@@ -51,10 +51,7 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
 
     public MyTableViewAdapter(final Context context, final List<Data> data, final TableView<Data> tableView) {
         super(context, data, tableView);
-
         this.context = context;
-
-
     }
 
     public void setItemSelectedListener(final MaterialSpinner.OnItemSelectedListener mItemSelectedListener) {
@@ -67,19 +64,12 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
 
     @Override
     public View getDefaultCellView(int i, int i1, ViewGroup viewGroup) {
-
         final Data myTableData = getRowData(i);
-        View renderedView = new View(getContext());
-
-
+        View renderedView;
         if (i1 == 0) {
             //Todo set questions here
-
             renderedView = renderColumn0Values(myTableData);
-
         } else renderedView = renderCalculatedValuesForYear(myTableData, i1 - 1);
-
-
         return renderedView;
     }
 
@@ -90,12 +80,10 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
 
 
     private View renderCalculatedValuesForYear(final Data data, int year) {
-
         TextView textView = null;
         List<String> calculationsForTheYears = data.getYearsDataFormula();
 
         if (calculationsForTheYears != null) {
-
             textView = new TextView(getContext());
             textView.setPadding(20, 10, 20, 10);
             if (data.getTag().equals(TAG_RESULTS))
@@ -110,8 +98,6 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
                 formatter.applyPattern("#,###,###.##");
 
                 textView.setText(formatter.format(value));
-
-
                 if (value < 0.0) {
                     textView.setTextColor(ContextCompat.getColor(getContext(), R.color.cpb_red));
                 } else if (value > 0) {
@@ -203,11 +189,7 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
 
 
             } else if (data.getTag().equals(TAG_VIEW)) {
-
-
                 Question startYearQuestion = DatabaseHelper.getInstance(context).getQuestionByTranslation("Start year");
-
-
 
                 final MaterialSpinner spinner = new MaterialSpinner(getContext());
                 spinner.setItems(startYearQuestion.formatQuestionOptions());
@@ -217,12 +199,8 @@ public class MyTableViewAdapter extends LongPressAwareTableDataAdapter<Data> {
                 spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
-
-                        Log.i("TABLE ADAPTER", "Spinner item selected with tag " + spinner.getTag());
-
                         if (itemSelectedListener != null)
                             itemSelectedListener.onItemSelected(view, position, id, item);
-
                     }
                 });
                 try {
